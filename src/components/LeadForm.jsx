@@ -2,14 +2,15 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { submitLead } from '../lib/supabase'
 
-export default function LeadForm({ propertyName = '', onClose }) {
+export default function LeadForm({ propertyName = '', onClose, mode = 'consultation' }) {
+  // mode: 'consultation' | 'brochure'
   const [form, setForm] = useState({
     name: '',
     phone: '',
     email: '',
     property: propertyName,
     budget: '',
-    message: '',
+    message: mode === 'brochure' ? 'Requested Brochure Download' : '',
   })
   const [status, setStatus] = useState('idle') // idle | loading | success | error
 
@@ -26,11 +27,13 @@ export default function LeadForm({ propertyName = '', onClose }) {
       setStatus('success')
       setTimeout(() => {
         if (onClose) onClose()
-      }, 2500)
+      }, 3000)
     } catch (err) {
       setStatus('error')
     }
   }
+
+  const isBrochure = mode === 'brochure'
 
   return (
     <motion.div
@@ -58,58 +61,60 @@ export default function LeadForm({ propertyName = '', onClose }) {
             key="success"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="flex flex-col items-center justify-center py-8 text-center"
+            className="flex flex-col items-center justify-center py-8 text-center gap-3"
           >
-            <div className="text-5xl mb-4">🎉</div>
-            <h3 className="text-[22px] font-black text-[#D4AF37]">Thank You!</h3>
-            <p className="mt-2 text-[14px] text-slate-400">We'll contact you within 24 hours.</p>
+            <div className="text-5xl">📲</div>
+            <h3 className="text-[22px] font-black text-[#D4AF37]">
+              {isBrochure ? 'Brochure Request Received!' : 'Thank You!'}
+            </h3>
+            <p className="text-[14px] text-slate-300 max-w-[260px]">
+              {isBrochure
+                ? 'Hum aapka brochure jald hi WhatsApp pe bhej rahe hain! 🚀'
+                : 'Our expert will call you back within 1 hour.'}
+            </p>
+            <div className="mt-2 rounded-[12px] border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-3 text-[13px] text-[#D4AF37]">
+              📞 Koi sawaal? Call karein: <a href="tel:+918102422651" className="font-bold underline">8102422651</a>
+            </div>
           </motion.div>
         ) : (
           <motion.form key="form" onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <h3 className="text-[18px] font-black text-slate-100">Get a Free Consultation</h3>
-              <p className="mt-1 text-[12px] text-slate-400">Our expert will call you back within 1 hour</p>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-2xl">{isBrochure ? '📄' : '📞'}</span>
+                <h3 className="text-[18px] font-black text-slate-100">
+                  {isBrochure ? 'Download Brochure' : 'Get Free Consultation'}
+                </h3>
+              </div>
+              <p className="text-[12px] text-slate-400 ml-8">
+                {isBrochure
+                  ? 'Apna number do — brochure WhatsApp pe bhejte hain'
+                  : 'Our expert will call you back within 1 hour'}
+              </p>
             </div>
 
             {/* Name */}
-            <div>
-              <input
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Your Full Name *"
-                required
-                className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
-              />
-            </div>
+            <input
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Your Full Name *"
+              required
+              className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
+            />
 
             {/* Phone */}
-            <div>
-              <input
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                placeholder="Phone Number *"
-                required
-                type="tel"
-                className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
-              />
-            </div>
+            <input
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              placeholder="WhatsApp Number *"
+              required
+              type="tel"
+              className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
+            />
 
-            {/* Email */}
-            <div>
-              <input
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Email Address (Optional)"
-                type="email"
-                className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
-              />
-            </div>
-
-            {/* Budget */}
-            <div>
+            {/* Budget — only for consultation */}
+            {!isBrochure && (
               <select
                 name="budget"
                 value={form.budget}
@@ -123,12 +128,12 @@ export default function LeadForm({ propertyName = '', onClose }) {
                 <option value="₹2.5 - 4 Cr">₹2.5 - 4 Cr</option>
                 <option value="Above ₹4 Cr">Above ₹4 Cr</option>
               </select>
-            </div>
+            )}
 
-            {/* Property (pre-filled) */}
+            {/* Property tag */}
             {propertyName && (
-              <div className="rounded-[12px] border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-3 text-[13px] text-[#D4AF37]">
-                📍 Interested in: <span className="font-bold">{propertyName}</span>
+              <div className="rounded-[12px] border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-4 py-2.5 text-[13px] text-[#D4AF37]">
+                🏠 {isBrochure ? 'Brochure for:' : 'Interested in:'} <span className="font-bold">{propertyName}</span>
               </div>
             )}
 
@@ -138,7 +143,11 @@ export default function LeadForm({ propertyName = '', onClose }) {
               disabled={status === 'loading'}
               className="w-full h-[50px] rounded-[14px] bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[14px] font-black uppercase tracking-wider text-[#080B11] shadow-[0_4px_15px_rgba(212,175,55,0.3)] hover:shadow-[0_8px_25px_rgba(212,175,55,0.5)] transition disabled:opacity-60"
             >
-              {status === 'loading' ? 'Submitting...' : 'Request Free Callback 📞'}
+              {status === 'loading'
+                ? 'Please wait...'
+                : isBrochure
+                ? '📄 Send Brochure on WhatsApp'
+                : '📞 Request Free Callback'}
             </button>
 
             {status === 'error' && (
