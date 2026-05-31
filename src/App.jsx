@@ -1,0 +1,25 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import ListingPage from './pages/ListingPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
+import BuilderPage from './pages/BuilderPage'
+import SmoothScroll from './components/SmoothScroll'
+import CursorGlow from './components/CursorGlow'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <SmoothScroll>
+        <CursorGlow />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/residential-properties-in-bangalore" element={<ListingPage />} />
+          <Route path="/project/:slug" element={<ProjectDetailPage />} />
+          <Route path="/builders/:slug" element={<BuilderPage />} />
+        </Routes>
+      </SmoothScroll>
+    </BrowserRouter>
+  )
+}
+
+export default App
