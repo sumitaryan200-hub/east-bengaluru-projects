@@ -292,7 +292,7 @@ export default function FloatingWidgets() {
               <div className="grid grid-cols-2 gap-2 px-5 py-2 bg-[#080B11]/95 border-t border-white/5">
                 {/* WhatsApp button */}
                 <a
-                  href="https://wa.me/919999999999?text=Hi,%20I'm%20interested%20in%20luxury%20properties%20in%20Bangalore."
+                  href="https://wa.me/918102422651?text=Hi,%20I'm%20interested%20in%20luxury%20properties%20in%20Bangalore."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-10 items-center justify-center gap-2 rounded-[12px] bg-[#25D366]/10 border border-[#25D366]/30 text-[12.5px] font-extrabold text-[#25D366] transition hover:bg-[#25D366]/20 cursor-pointer"
@@ -302,7 +302,7 @@ export default function FloatingWidgets() {
                 </a>
                 {/* Callback Button */}
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+918102422651"
                   className="flex h-10 items-center justify-center gap-2 rounded-[12px] bg-[#D4AF37]/10 border border-[#D4AF37]/35 text-[12.5px] font-extrabold text-[#D4AF37] transition hover:bg-[#D4AF37]/20 cursor-pointer"
                 >
                   <Phone className="h-4 w-4 shrink-0 text-[#D4AF37]" />

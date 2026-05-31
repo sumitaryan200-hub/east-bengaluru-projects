@@ -77,7 +77,7 @@ function BuilderPage() {
 
                   <div className="mt-5 flex flex-wrap gap-3">
                     <a
-                      href="tel:+919999999999"
+                      href="tel:+918102422651"
                       className="flex h-[44px] items-center gap-2 rounded-[10px] px-6 text-[14px] font-semibold text-white transition hover:opacity-90"
                       style={{ backgroundColor: primary }}
                     >
@@ -154,7 +154,7 @@ function BuilderPage() {
                         View Details
                       </Link>
                       <a
-                        href="tel:+919999999999"
+                        href="tel:+918102422651"
                         className="flex h-[40px] items-center justify-center rounded-[10px] border border-slate-200 px-4 text-[13px] font-semibold text-slate-700 transition hover:bg-slate-50"
                       >
                         Enquire
@@ -173,7 +173,7 @@ function BuilderPage() {
                   Register your interest and we'll notify you when new projects are listed.
                 </p>
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+918102422651"
                   className="mt-6 inline-flex items-center gap-2 rounded-[10px] px-6 py-3 text-[14px] font-semibold text-white transition hover:opacity-90"
                   style={{ backgroundColor: primary }}
                 >

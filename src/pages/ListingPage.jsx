@@ -248,7 +248,7 @@ function PropertyListCard({ project }) {
               View Details
             </Link>
             <a
-              href="tel:+919999999999"
+              href="tel:+918102422651"
               className="relative overflow-hidden flex h-[44px] items-center justify-center rounded-full bg-gradient-to-r from-[#D4AF37] via-[#D4AF37] to-[#AA7C11] px-6 text-[13px] font-black uppercase tracking-wider text-[#080B11] shadow-[0_4px_12px_rgba(212,175,55,0.2)] hover:shadow-[0_8px_20px_rgba(212,175,55,0.4)] transition-all cursor-pointer border border-[#fbd45b]/20"
             >
               <motion.div

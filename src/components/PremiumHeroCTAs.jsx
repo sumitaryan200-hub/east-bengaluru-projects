@@ -179,7 +179,7 @@ export default function PremiumHeroCTAs() {
         >
           <MagneticWrapper>
             <motion.a
-              href="tel:+919999999999"
+              href="tel:+918102422651"
               onHoverStart={() => setHoveredButton(1)}
               onHoverEnd={() => setHoveredButton(null)}
               whileHover={{ scale: 1.04, borderColor: 'rgba(212,175,55,0.5)', backgroundColor: 'rgba(255,255,255,0.08)' }}

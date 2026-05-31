@@ -404,7 +404,7 @@ function PropertyCard({ project }) {
           </Link>
           {/* Callback CTA */}
           <a
-            href="tel:+919999999999"
+            href="tel:+918102422651"
             className="relative overflow-hidden flex h-[48px] flex-1 items-center justify-center rounded-full bg-gradient-to-r from-[#D4AF37] via-[#D4AF37] to-[#AA7C11] text-[13px] font-black uppercase tracking-wider text-[#080B11] shadow-[0_4px_15px_rgba(212,175,55,0.22)] hover:shadow-[0_8px_25px_rgba(212,175,55,0.45)] transition-all cursor-pointer border border-[#fbd45b]/20"
           >
             <motion.div

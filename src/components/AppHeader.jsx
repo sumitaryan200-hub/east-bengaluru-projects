@@ -95,7 +95,7 @@ function AppHeader({ builderLogo, builderName, builderColor }) {
 
         {/* Right actions */}
         <div className="flex items-center gap-2 sm:gap-3">
-          <a href="tel:+919999999999" className={`hidden items-center gap-2 rounded-full border px-4 py-2 text-[13px] font-semibold transition-all duration-500 sm:flex ${
+          <a href="tel:+918102422651" className={`hidden items-center gap-2 rounded-full border px-4 py-2 text-[13px] font-semibold transition-all duration-500 sm:flex ${
             isTransparent 
               ? 'border-white/20 text-white hover:border-white hover:bg-white/10' 
               : 'border-[#D4AF37]/30 text-[#D4AF37] hover:border-[#D4AF37] hover:bg-[#D4AF37]/10'
@@ -126,7 +126,7 @@ function AppHeader({ builderLogo, builderName, builderColor }) {
             <Link to="/" onClick={() => setMobileOpen(false)} className="block text-[17px] font-semibold text-slate-200">Home</Link>
             <Link to="/residential-properties-in-bangalore" onClick={() => setMobileOpen(false)} className="block text-[17px] font-semibold text-slate-200">All Projects</Link>
             <Link to="/builders/prestige" onClick={() => setMobileOpen(false)} className="block text-[17px] font-semibold text-slate-200">Builders</Link>
-            <a href="tel:+919999999999" className="block text-[17px] font-semibold text-slate-200">Contact Us</a>
+            <a href="tel:+918102422651" className="block text-[17px] font-semibold text-slate-200">Contact Us</a>
           </nav>
           <div className="px-5">
             <div className="text-[12px] font-semibold uppercase tracking-widest text-[#D4AF37]/60 mb-3">Localities</div>
