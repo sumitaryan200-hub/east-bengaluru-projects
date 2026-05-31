@@ -1,13 +1,49 @@
 import { ChevronDown, ChevronLeft, ChevronRight, Heart, MapPin, Phone, X } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import AppFooter from '../components/AppFooter'
 import FloatingWidgets from '../components/FloatingWidgets'
 import ScrollReveal from '../components/ScrollReveal'
 import StaggerReveal from '../components/StaggerReveal'
+import LeadForm from '../components/LeadForm'
 import { getBuilderBySlug } from '../data/builders'
 import { projects } from '../data/marketplace'
+
+// ── Brochure Button + Modal ───────────────────────────────────────────────────
+function BrochureButton({ projectName }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        className="mt-4 w-full flex items-center justify-center gap-2 h-[50px] rounded-[14px] border border-[#D4AF37]/40 bg-[#D4AF37]/5 text-[14px] font-black uppercase tracking-wider text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/70 transition-all duration-300"
+      >
+        📄 Download Brochure
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+            onClick={(e) => { if (e.target === e.currentTarget) setOpen(false) }}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="w-full max-w-[420px]"
+            >
+              <LeadForm propertyName={projectName} mode="brochure" onClose={() => setOpen(false)} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}
 
 // ── Enquiry form ──────────────────────────────────────────────────────────────
 // ── Enquiry form ──────────────────────────────────────────────────────────────
@@ -563,6 +599,9 @@ function ProjectDetailPage() {
             <ScrollReveal direction="right" delay={0.2} className="space-y-5 lg:sticky lg:top-[80px]">
               <div>
                 <EnquiryForm builder={builder} project={project} />
+
+                {/* Download Brochure Button */}
+                <BrochureButton projectName={project.name} />
 
                 {/* Quick info card */}
                 <div className="mt-5 overflow-hidden rounded-[20px] border border-white/10 bg-[#0f131a] p-5 shadow-2xl relative">
