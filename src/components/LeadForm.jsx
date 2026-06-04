@@ -46,10 +46,10 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
     e.preventDefault()
     if (!form.name || !form.phone) return
     setStatus('loading')
-    // Save lead to Google Sheets (fire-and-forget, no-cors)
-    await submitLead({ ...form, source: isBrochure ? 'brochure' : 'consultation' })
-    // Open WhatsApp with pre-filled message
+    // Open WhatsApp FIRST (must be synchronous with user click — browsers block popups after await)
     openWhatsApp(form.name, form.phone, form.property, isBrochure)
+    // Save lead to Google Sheets (fire-and-forget, no-cors)
+    submitLead({ ...form, source: isBrochure ? 'brochure' : 'consultation' })
     setStatus('success')
     setTimeout(() => {
       if (onClose) onClose()
