@@ -20,8 +20,8 @@ async function submitLead(data) {
 
 function openWhatsApp(name, phone, projectName, isBrochure) {
   const msg = isBrochure
-    ? `Hi Sumit bhai! 🙏\n\nMujhe *${projectName}* ka brochure chahiye.\n\n*Naam:* ${name}\n*Number:* ${phone}\n\nPlease brochure bhejiye. Thank you!`
-    : `Hi Sumit bhai! 🙏\n\nMujhe *${projectName}* ke baare mein jaankari chahiye.\n\n*Naam:* ${name}\n*Number:* ${phone}\n\nPlease call/WhatsApp karein. Thank you!`
+    ? `Hi, I would like to request the brochure for *${projectName}*.\n\n*Name:* ${name}\n*Contact:* ${phone}\n\nKindly share the brochure at your earliest convenience. Thank you!`
+    : `Hi, I am interested in *${projectName}* and would like to know more details.\n\n*Name:* ${name}\n*Contact:* ${phone}\n\nRequest you to please get in touch. Thank you!`
   const url = `https://wa.me/${SUMIT_WHATSAPP}?text=${encodeURIComponent(msg)}`
   window.open(url, '_blank')
 }
