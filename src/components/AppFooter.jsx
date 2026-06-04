@@ -40,8 +40,8 @@ function AppFooter() {
               <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-white">Under Construction</Link></li>
               <li><a href="#" className="transition hover:text-white">Home Loan</a></li>
               <li><a href="#" className="transition hover:text-white">EMI Calculator</a></li>
-              <li><a href="#" className="transition hover:text-white">About Us</a></li>
-              <li><a href="#" className="transition hover:text-white">Contact Us</a></li>
+              <li><Link to="/contact" className="transition hover:text-white">About Us</Link></li>
+              <li><Link to="/contact" className="transition hover:text-white">Contact Us</Link></li>
             </ul>
           </div>
 

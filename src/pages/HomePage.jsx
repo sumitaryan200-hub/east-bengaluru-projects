@@ -394,26 +394,23 @@ function PropertyCard({ project }) {
         </div>
 
         {/* High-Fidelity Action Buttons */}
-        <div className="mt-6 flex gap-3 pt-2">
+        <div className="mt-6 flex gap-2 pt-2">
           {/* View Details CTA */}
           <Link
             to={`/project/${project.slug}`}
-            className="flex h-[48px] flex-1 items-center justify-center rounded-full border border-white/15 bg-white/4 text-[13px] font-bold text-slate-200 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
+            className="flex h-[46px] flex-1 items-center justify-center rounded-full border border-white/15 bg-white/4 text-[12px] font-bold text-slate-200 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
           >
             View Details
           </Link>
-          {/* Callback CTA */}
+          {/* WhatsApp CTA */}
           <a
-            href="tel:+918102422651"
-            className="relative overflow-hidden flex h-[48px] flex-1 items-center justify-center rounded-full bg-gradient-to-r from-[#D4AF37] via-[#D4AF37] to-[#AA7C11] text-[13px] font-black uppercase tracking-wider text-[#080B11] shadow-[0_4px_15px_rgba(212,175,55,0.22)] hover:shadow-[0_8px_25px_rgba(212,175,55,0.45)] transition-all cursor-pointer border border-[#fbd45b]/20"
+            href={`https://wa.me/918102422651?text=${encodeURIComponent(`Hi, I am interested in *${project.name}* (${project.microMarket}).\n\n*Price:* ${project.priceLabel}\n*Config:* ${project.beds.join(', ')}\n\nKindly share more details. Thank you!`)}`}
+            target="_blank"
+            rel="noreferrer"
+            className="flex h-[46px] flex-1 items-center justify-center gap-1.5 rounded-full bg-[#25D366] text-[12px] font-black uppercase tracking-wider text-white shadow-[0_4px_12px_rgba(37,211,102,0.25)] hover:shadow-[0_8px_20px_rgba(37,211,102,0.4)] transition-all cursor-pointer"
           >
-            <motion.div
-              initial={{ left: '-100%' }}
-              whileHover={{ left: '200%' }}
-              transition={{ duration: 1.0, ease: "easeOut" }}
-              className="absolute top-0 h-full w-[40%] -skew-x-[25deg] bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none"
-            />
-            <span>Instant Call</span>
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-white shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>WhatsApp</span>
           </a>
         </div>
       </div>
@@ -772,8 +769,8 @@ function HomePage() {
           <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/5 bg-[#080B11]/70 backdrop-blur-md">
             <div className="mx-auto flex max-w-[1380px] flex-wrap items-center justify-center gap-y-2 px-4 py-4 sm:px-6 lg:px-8">
               {[
-                { label: '500+ Projects', subtitle: 'Verified Listings' },
-                { label: '23+ Builders', subtitle: 'Premium Developers' },
+                { label: '99+ Projects', subtitle: 'Verified Listings' },
+                { label: '25+ Builders', subtitle: 'Premium Developers' },
                 { label: 'RERA Certified', subtitle: 'Guaranteed Trust' },
                 { label: 'East Bangalore Specialist', subtitle: 'Local Authority' },
               ].map(({ label, subtitle }, i, arr) => (
@@ -840,6 +837,70 @@ function HomePage() {
           )}
         </section>
 
+        {/* ── New Launches ──────────────────────────────────────────── */}
+        {(() => {
+          const newLaunches = projects.filter((p) => p.isNew || p.badge === 'New Launch').slice(0, 6)
+          if (!newLaunches.length) return null
+          return (
+            <section className="mx-auto max-w-[1380px] px-4 pb-24 sm:px-6 lg:px-8">
+              <ScrollReveal>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10">
+                  <div>
+                    <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-[11px] font-black uppercase tracking-widest text-amber-400 mb-3">
+                      🚀 New Launches
+                    </div>
+                    <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-100 sm:text-[36px] tracking-tight">
+                      Just Launched <span className="text-gold-gradient italic">Projects</span>
+                    </h2>
+                    <p className="mt-1.5 text-[14px] text-slate-400">Fresh off the market — be the first to invest</p>
+                  </div>
+                  <Link to="/residential-properties-in-bangalore" className="shrink-0 text-[13px] font-bold uppercase tracking-wider text-[#D4AF37] transition hover:text-[#AA7C11] flex items-center gap-1.5">
+                    View All <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </ScrollReveal>
+              <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {newLaunches.map((p) => (
+                  <PropertyCard key={p.slug} project={p} />
+                ))}
+              </StaggerReveal>
+            </section>
+          )
+        })()}
+
+        {/* ── Hot Deals ──────────────────────────────────────────────── */}
+        {(() => {
+          const hotDeals = projects.filter((p) => p.badge === 'Hot Deal' || p.priceValue <= 1.2).slice(0, 3)
+          if (!hotDeals.length) return null
+          return (
+            <section className="border-y border-slate-800 bg-[#0a0d14] py-20">
+              <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
+                <ScrollReveal>
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10">
+                    <div>
+                      <div className="inline-flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-4 py-1.5 text-[11px] font-black uppercase tracking-widest text-rose-400 mb-3">
+                        🔥 Limited Time
+                      </div>
+                      <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-100 sm:text-[36px] tracking-tight">
+                        Top <span className="text-gold-gradient italic">Deals</span>
+                      </h2>
+                      <p className="mt-1.5 text-[14px] text-slate-400">Best value luxury homes — act before prices rise</p>
+                    </div>
+                    <Link to="/residential-properties-in-bangalore" className="shrink-0 text-[13px] font-bold uppercase tracking-wider text-[#D4AF37] transition hover:text-[#AA7C11] flex items-center gap-1.5">
+                      View All <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </ScrollReveal>
+                <StaggerReveal className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {hotDeals.map((p) => (
+                    <PropertyCard key={p.slug} project={p} />
+                  ))}
+                </StaggerReveal>
+              </div>
+            </section>
+          )
+        })()}
+
         {/* ── Builder Carousel ───────────────────────────────────────── */}
         <BuilderCarousel />
 
@@ -886,8 +947,8 @@ function HomePage() {
           <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: '🏢', stat: '500+', label: 'Premium Listings' },
-                { icon: '🏗️', stat: '23+', label: 'Elite Builders' },
+                { icon: '🏢', stat: '99+', label: 'Premium Listings' },
+                { icon: '🏗️', stat: '25+', label: 'Elite Builders' },
                 { icon: '📍', stat: '22', label: 'Prime Localities' },
                 { icon: '🏆', stat: 'RERA', label: 'Authorised Agency' },
               ].map((item) => (

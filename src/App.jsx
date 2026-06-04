@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage'
 import ListingPage from './pages/ListingPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
 import BuilderPage from './pages/BuilderPage'
+import ContactPage from './pages/ContactPage'
 import SmoothScroll from './components/SmoothScroll'
 import CursorGlow from './components/CursorGlow'
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/residential-properties-in-bangalore" element={<ListingPage />} />
           <Route path="/project/:slug" element={<ProjectDetailPage />} />
           <Route path="/builders/:slug" element={<BuilderPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </SmoothScroll>
     </BrowserRouter>

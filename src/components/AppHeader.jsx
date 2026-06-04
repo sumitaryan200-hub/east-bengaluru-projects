@@ -91,6 +91,9 @@ function AppHeader({ builderLogo, builderName, builderColor }) {
           <a href="#" className={`text-[14px] font-semibold transition-colors duration-500 ${
             isTransparent ? 'text-white/80 hover:text-white' : 'text-slate-300 hover:text-[#D4AF37]'
           }`}>Home Loan</a>
+          <Link to="/contact" className={`text-[14px] font-semibold transition-colors duration-500 ${
+            isTransparent ? 'text-white/80 hover:text-white' : 'text-slate-300 hover:text-[#D4AF37]'
+          }`}>Contact</Link>
         </nav>
 
         {/* Right actions */}
