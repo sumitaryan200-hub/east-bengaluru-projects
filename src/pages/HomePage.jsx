@@ -50,17 +50,17 @@ function HeroSearch() {
       className="mx-auto mt-10 max-w-[980px] px-4"
       ref={ref}
     >
-      <div className="overflow-hidden rounded-[24px] border border-[#D4AF37]/20 bg-[#080B11]/70 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] backdrop-blur-2xl gold-border-glow">
+      <div className="overflow-hidden rounded-[24px] border border-[#D4AF37]/20 bg-white/70 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.08)] backdrop-blur-2xl ">
         <div className="grid lg:grid-cols-[220px_1fr_auto]">
           {/* Locality selector */}
-          <div className="relative border-b border-white/10 lg:border-b-0 lg:border-r lg:border-white/10">
+          <div className="relative border-b border-slate-200 lg:border-b-0 lg:border-r lg:border-slate-200">
             <button
               onClick={() => setLocalityOpen((v) => !v)}
               className="flex h-[72px] w-full items-center justify-between px-6 text-left transition hover:bg-white/5"
             >
               <div>
                 <div className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]/75">Location</div>
-                <div className="mt-0.5 text-[15px] font-semibold text-slate-100">{selectedLocality}</div>
+                <div className="mt-0.5 text-[15px] font-semibold text-slate-900">{selectedLocality}</div>
               </div>
               <ChevronRight className="h-4 w-4 rotate-90 text-[#D4AF37]" />
             </button>
@@ -71,7 +71,7 @@ function HeroSearch() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 top-[76px] z-30 w-[280px] overflow-hidden rounded-[16px] border border-[#D4AF37]/20 bg-[#080B11]/98 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] backdrop-blur-xl"
+                  className="absolute left-0 top-[76px] z-30 w-[280px] overflow-hidden rounded-[16px] border border-[#D4AF37]/20 bg-white shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] backdrop-blur-xl"
                 >
                   <div className="max-h-[300px] overflow-y-auto p-4">
                     <div className="mb-2 text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]/65">Popular Localities</div>
@@ -79,7 +79,7 @@ function HeroSearch() {
                       <button
                         key={loc}
                         onClick={() => { setSelectedLocality(loc); setLocalityOpen(false) }}
-                        className="flex w-full items-center gap-2 rounded-[8px] px-3 py-2.5 text-left text-[14px] text-slate-300 transition hover:bg-[#D4AF37]/10 hover:text-[#D4AF37]"
+                        className="flex w-full items-center gap-2 rounded-[8px] px-3 py-2.5 text-left text-[14px] text-slate-700 transition hover:bg-[#D4AF37]/10 hover:text-[#D4AF37]"
                       >
                         📍 {loc}
                       </button>
@@ -99,7 +99,7 @@ function HeroSearch() {
                 onChange={(e) => setQuery(e.target.value)}
                 onFocus={() => setFocused(true)}
                 placeholder="Search builder, project, micro-market..."
-                className="w-full border-0 bg-transparent text-[15px] text-slate-100 outline-none placeholder:text-slate-500"
+                className="w-full border-0 bg-transparent text-[15px] text-slate-900 outline-none placeholder:text-slate-400"
               />
             </label>
             {/* Dropdown */}
@@ -110,7 +110,7 @@ function HeroSearch() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 right-0 top-[76px] z-30 overflow-hidden rounded-[16px] border border-[#D4AF37]/25 bg-[#080B11]/98 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+                  className="absolute left-0 right-0 top-[76px] z-30 overflow-hidden rounded-[16px] border border-[#D4AF37]/25 bg-white shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] backdrop-blur-xl"
                 >
                   {searchResults.map((item, i) => (
                     <button
@@ -121,7 +121,7 @@ function HeroSearch() {
                         setFocused(false)
                         setQuery('')
                       }}
-                      className="flex w-full items-center gap-4 border-b border-white/5 px-6 py-4 text-left transition last:border-0 hover:bg-white/5"
+                      className="flex w-full items-center gap-4 border-b border-slate-100 px-6 py-4 text-left transition last:border-0 hover:bg-white/5"
                     >
                       <span className={`shrink-0 rounded-[6px] px-2 py-0.5 text-[9px] font-bold tracking-wide uppercase ${
                         item.type === 'Project' ? 'bg-[#D4AF37]/20 text-[#D4AF37]' : 'bg-emerald-500/20 text-emerald-400'
@@ -129,8 +129,8 @@ function HeroSearch() {
                         {item.type}
                       </span>
                       <div>
-                        <div className="text-[14px] font-bold text-slate-100">{item.label}</div>
-                        <div className="text-[12px] text-slate-400">{item.sub}</div>
+                        <div className="text-[14px] font-bold text-slate-900">{item.label}</div>
+                        <div className="text-[12px] text-slate-600">{item.sub}</div>
                       </div>
                     </button>
                   ))}
@@ -157,7 +157,7 @@ function HeroSearch() {
           <Link
             key={loc}
             to="/residential-properties-in-bangalore"
-            className="rounded-[10px] border border-white/5 bg-[#080B11]/40 px-4.5 py-2.5 text-[12.5px] text-slate-300 backdrop-blur-sm transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] hover:bg-[#080B11]/70"
+            className="rounded-[10px] border border-slate-100 bg-white/40 px-4.5 py-2.5 text-[12.5px] text-slate-700 backdrop-blur-sm transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] hover:bg-white/70"
           >
             📍 {loc}
           </Link>
@@ -204,7 +204,7 @@ function PropertyCard({ project }) {
     if (project.priceValue >= 1.5 || project.slug.includes('raintree') || project.slug.includes('neopolis')) {
       return {
         text: 'Signature Luxury',
-        classes: 'border-[#D4AF37]/40 bg-gradient-to-r from-[#D4AF37]/20 to-[#AA7C11]/20 text-[#D4AF37] font-extrabold gold-border-glow'
+        classes: 'border-[#D4AF37]/40 bg-gradient-to-r from-[#D4AF37]/20 to-[#AA7C11]/20 text-[#D4AF37] font-extrabold '
       }
     }
     return {
@@ -221,10 +221,10 @@ function PropertyCard({ project }) {
       onHoverEnd={() => setHovered(false)}
       whileHover={{ y: -10 }}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
-      className={`flex h-full flex-col overflow-hidden rounded-[24px] border bg-[#080B11]/70 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] transition-all duration-300 ${
+      className={`flex h-full flex-col overflow-hidden rounded-[24px] border bg-white/70 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-300 ${
         hovered 
-          ? 'border-[#D4AF37]/50 shadow-[0_25px_60px_rgba(212,175,55,0.14)] gold-border-glow' 
-          : 'border-slate-800/80'
+          ? 'border-[#D4AF37]/50 shadow-[0_25px_60px_rgba(212,175,55,0.14)] ' 
+          : 'border-slate-200'
       }`}
     >
       {/* Property Image Container */}
@@ -272,7 +272,7 @@ function PropertyCard({ project }) {
                 className={`flex h-9 w-9 items-center justify-center rounded-full border shadow-lg backdrop-blur-md transition ${
                   compared 
                     ? 'bg-[#D4AF37]/20 border-[#D4AF37] text-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.3)]' 
-                    : 'bg-[#080B11]/70 border-white/10 text-slate-400 hover:text-white hover:border-white/30'
+                    : 'bg-white/70 border-slate-200 text-slate-600 hover:text-white hover:border-white/30'
                 }`}
                 title="Compare Property"
               >
@@ -289,11 +289,11 @@ function PropertyCard({ project }) {
                 className={`flex h-9 w-9 items-center justify-center rounded-full border shadow-lg backdrop-blur-md transition ${
                   wishlist 
                     ? 'bg-rose-500/20 border-rose-500 text-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.3)]' 
-                    : 'bg-[#080B11]/70 border-white/10 text-slate-400 hover:text-[#D4AF37] hover:border-white/30'
+                    : 'bg-white/70 border-slate-200 text-slate-600 hover:text-[#D4AF37] hover:border-white/30'
                 }`}
                 title="Add to Wishlist"
               >
-                <svg viewBox="0 0 24 24" className={`h-4.5 w-4.5 transition-transform duration-300 ${wishlist ? 'fill-rose-500 text-rose-500 scale-110' : 'fill-none text-slate-400'}`} stroke="currentColor" strokeWidth="2.5">
+                <svg viewBox="0 0 24 24" className={`h-4.5 w-4.5 transition-transform duration-300 ${wishlist ? 'fill-rose-500 text-rose-500 scale-110' : 'fill-none text-slate-600'}`} stroke="currentColor" strokeWidth="2.5">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
               </motion.button>
@@ -302,14 +302,14 @@ function PropertyCard({ project }) {
 
           <div className="flex justify-between items-end w-full">
             {/* Rating Indicator */}
-            <div className="flex items-center gap-1.5 rounded-[10px] bg-[#080B11]/75 px-3 py-1.5 backdrop-blur-md border border-white/5 shadow-md">
+            <div className="flex items-center gap-1.5 rounded-[10px] bg-white/75 px-3 py-1.5 backdrop-blur-md border border-slate-100 shadow-md">
               <span className="text-[#D4AF37] text-[11px] font-black">★</span>
               <span className="text-white text-[12px] font-bold">{project.rating || '4.8'}</span>
-              <span className="text-slate-400 text-[10px] font-semibold">(24 reviews)</span>
+              <span className="text-slate-600 text-[10px] font-semibold">(24 reviews)</span>
             </div>
 
             {/* Photo Count Indicator */}
-            <div className="flex items-center gap-1 rounded-[10px] bg-[#080B11]/75 px-2.5 py-1.5 backdrop-blur-md border border-white/5 shadow-md text-[10.5px] font-bold text-slate-300">
+            <div className="flex items-center gap-1 rounded-[10px] bg-white/75 px-2.5 py-1.5 backdrop-blur-md border border-slate-100 shadow-md text-[10.5px] font-bold text-slate-700">
               <span>📷</span>
               <span>1/{project.images.length || 5}</span>
             </div>
@@ -323,10 +323,10 @@ function PropertyCard({ project }) {
         <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#D4AF37]/90 mb-1.5">{project.builder}</div>
 
         {/* Property Name */}
-        <h3 className="text-[20px] font-extrabold leading-snug text-slate-100 line-clamp-1 hover:text-[#D4AF37] transition duration-300">{project.name}</h3>
+        <h3 className="text-[20px] font-extrabold leading-snug text-slate-900 line-clamp-1 hover:text-[#D4AF37] transition duration-300">{project.name}</h3>
 
         {/* Location Row */}
-        <div className="mt-2 flex items-center gap-1.5 text-[13px] font-medium text-slate-400">
+        <div className="mt-2 flex items-center gap-1.5 text-[13px] font-medium text-slate-600">
           <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 shrink-0 fill-none stroke-[#D4AF37]/75" strokeWidth="2.5">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
@@ -335,49 +335,49 @@ function PropertyCard({ project }) {
         </div>
 
         {/* Config & Space Specifications */}
-        <div className="mt-4 grid grid-cols-2 gap-3 border-y border-white/5 py-3.5 text-slate-300">
+        <div className="mt-4 grid grid-cols-2 gap-3 border-y border-slate-100 py-3.5 text-slate-700">
           <div>
             <div className="text-[9px] font-bold uppercase tracking-wider text-slate-500">Configuration</div>
-            <div className="mt-0.5 text-[13.5px] font-extrabold text-slate-200">{bhkText}</div>
+            <div className="mt-0.5 text-[13.5px] font-extrabold text-slate-800">{bhkText}</div>
           </div>
-          <div className="border-l border-white/5 pl-4">
+          <div className="border-l border-slate-100 pl-4">
             <div className="text-[9px] font-bold uppercase tracking-wider text-slate-500">Super Area</div>
-            <div className="mt-0.5 text-[13.5px] font-extrabold text-slate-200">{areaText.replace('Sq.ft', 'sq.ft')}</div>
+            <div className="mt-0.5 text-[13.5px] font-extrabold text-slate-800">{areaText.replace('Sq.ft', 'sq.ft')}</div>
           </div>
         </div>
 
         {/* Core Amenities Custom Icons Row */}
-        <div className="mt-4 flex items-center justify-between gap-2 bg-white/3 rounded-[12px] px-4.5 py-3 border border-white/5">
+        <div className="mt-4 flex items-center justify-between gap-2 bg-slate-100 rounded-[12px] px-4.5 py-3 border border-slate-100">
           <span className="text-[9.5px] font-black uppercase tracking-widest text-[#D4AF37]/80">Amenities</span>
           <div className="flex gap-2.5">
             {/* Swimmimg Pool */}
-            <span className="h-7 w-7 rounded-lg bg-[#080B11] border border-white/5 flex items-center justify-center" title="Swimming Pool">
+            <span className="h-7 w-7 rounded-lg bg-white border border-slate-100 flex items-center justify-center" title="Swimming Pool">
               <svg viewBox="0 0 24 24" className="h-3.8 w-3.8 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M2 6c.6 0 1.2-.2 1.6-.6L5 4.3c.8-.8 2-.8 2.8 0l1.4 1.1c.4.4 1 .6 1.6.6s1.2-.2 1.6-.6" />
                 <path d="M2 12c.6 0 1.2-.2 1.6-.6l1.4-1.1c.8-.8 2-.8 2.8 0l1.4 1.1c.4.4 1 .6 1.6.6" />
               </svg>
             </span>
             {/* Gym */}
-            <span className="h-7 w-7 rounded-lg bg-[#080B11] border border-white/5 flex items-center justify-center" title="Fitness Centre">
+            <span className="h-7 w-7 rounded-lg bg-white border border-slate-100 flex items-center justify-center" title="Fitness Centre">
               <svg viewBox="0 0 24 24" className="h-3.8 w-3.8 text-[#D4AF37]" fill="currentColor">
                 <path d="M6.5 5h1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm11 0h1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM9 11h6v2H9z" />
               </svg>
             </span>
             {/* Clubhouse */}
-            <span className="h-7 w-7 rounded-lg bg-[#080B11] border border-white/5 flex items-center justify-center" title="Luxury Clubhouse">
+            <span className="h-7 w-7 rounded-lg bg-white border border-slate-100 flex items-center justify-center" title="Luxury Clubhouse">
               <svg viewBox="0 0 24 24" className="h-3.8 w-3.8 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M3 21h18M3 10h18M5 21V10M19 21V10M9 21v-4a3 3 0 0 1 6 0v4" />
               </svg>
             </span>
             {/* Parking */}
-            <span className="h-7 w-7 rounded-lg bg-[#080B11] border border-white/5 flex items-center justify-center" title="Reserved Parking">
+            <span className="h-7 w-7 rounded-lg bg-white border border-slate-100 flex items-center justify-center" title="Reserved Parking">
               <svg viewBox="0 0 24 24" className="h-3.8 w-3.8 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <rect x="3" y="3" width="18" height="18" rx="4" />
                 <path d="M9 17V7h4a3 3 0 0 1 0 6H9" />
               </svg>
             </span>
             {/* Security */}
-            <span className="h-7 w-7 rounded-lg bg-[#080B11] border border-white/5 flex items-center justify-center" title="24x7 Security">
+            <span className="h-7 w-7 rounded-lg bg-white border border-slate-100 flex items-center justify-center" title="24x7 Security">
               <svg viewBox="0 0 24 24" className="h-3.8 w-3.8 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
@@ -398,7 +398,7 @@ function PropertyCard({ project }) {
           {/* View Details CTA */}
           <Link
             to={`/project/${project.slug}`}
-            className="flex h-[46px] flex-1 items-center justify-center rounded-full border border-white/15 bg-white/4 text-[12px] font-bold text-slate-200 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
+            className="flex h-[46px] flex-1 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-[12px] font-bold text-slate-800 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
           >
             View Details
           </Link>
@@ -446,27 +446,27 @@ function BuilderCarousel() {
   }, [max])
 
   return (
-    <section className="bg-[#080B11] border-t border-white/5 py-20">
+    <section className="bg-white border-t border-slate-100 py-20">
       <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-100 sm:text-[38px] tracking-tight">
+            <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-900 sm:text-[38px] tracking-tight">
               Prestige <span className="text-gold-gradient italic">Builders</span>
             </h2>
-            <p className="mt-1.5 text-[14px] text-slate-400">Discover projects from Bangalore's most trusted luxury developers</p>
+            <p className="mt-1.5 text-[14px] text-slate-600">Discover projects from Bangalore's most trusted luxury developers</p>
           </div>
           <div className="flex items-center gap-2">
             <button 
               onClick={prev} 
               disabled={index === 0} 
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-800 bg-[#0f131a] text-slate-400 transition hover:border-[#D4AF37] hover:text-[#D4AF37] disabled:opacity-30 disabled:hover:text-slate-400"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-600 transition hover:border-[#D4AF37] hover:text-[#D4AF37] disabled:opacity-30 disabled:hover:text-slate-600"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
             <button 
               onClick={next} 
               disabled={index >= max} 
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-800 bg-[#0f131a] text-slate-400 transition hover:border-[#D4AF37] hover:text-[#D4AF37] disabled:opacity-30 disabled:hover:text-slate-400"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-600 transition hover:border-[#D4AF37] hover:text-[#D4AF37] disabled:opacity-30 disabled:hover:text-slate-600"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -482,13 +482,13 @@ function BuilderCarousel() {
               <motion.div
                 key={b.slug}
                 whileHover={{ y: -5 }}
-                className="flex w-full shrink-0 flex-col overflow-hidden rounded-[20px] border border-slate-800 bg-[#0f131a] shadow-md sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                className="flex w-full shrink-0 flex-col overflow-hidden rounded-[20px] border border-slate-200 bg-slate-50 shadow-md sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
                 {/* Color top bar */}
                 <div className="h-1.5 w-full bg-gradient-to-r from-[#D4AF37] to-[#AA7C11]" />
 
                 <div className="p-6">
-                  <div className="text-[19px] font-bold text-slate-100">{b.name}</div>
+                  <div className="text-[19px] font-bold text-slate-900">{b.name}</div>
 
                   {/* Stars + stats */}
                   <div className="mt-2.5 flex items-center gap-1.5">
@@ -498,21 +498,21 @@ function BuilderCarousel() {
                     <span className="text-[13px] font-bold text-[#D4AF37] ml-1">{b.rating}</span>
                   </div>
 
-                  <div className="mt-5 flex gap-6 border-t border-slate-800 pt-4 text-center">
+                  <div className="mt-5 flex gap-6 border-t border-slate-200 pt-4 text-center">
                     <div>
-                      <div className="text-[18px] font-black text-slate-100">{b.experience}+</div>
+                      <div className="text-[18px] font-black text-slate-900">{b.experience}+</div>
                       <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Years Exp.</div>
                     </div>
-                    <div className="border-l border-slate-800 pl-6">
+                    <div className="border-l border-slate-200 pl-6">
                       <div className="text-[18px] font-black text-[#D4AF37]">{b.projectCount > 0 ? b.projectCount : '—'}</div>
                       <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">{b.projectCount > 0 ? 'Projects' : 'Coming Soon'}</div>
                     </div>
                   </div>
 
-                  <p className="mt-5 line-clamp-3 text-[13px] leading-6 text-slate-400">{b.description}</p>
+                  <p className="mt-5 line-clamp-3 text-[13px] leading-6 text-slate-600">{b.description}</p>
                 </div>
 
-                <div className="mt-auto border-t border-slate-800/60 px-6 py-5">
+                <div className="mt-auto border-t border-slate-200/60 px-6 py-5">
                   <Link
                     to={`/builders/${b.slug}`}
                     className="flex h-[42px] w-full items-center justify-center rounded-[10px] text-[13px] font-bold uppercase tracking-wider text-[#080B11] bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] hover:opacity-90 transition"
@@ -569,7 +569,7 @@ function HomePage() {
   const recent = projects.filter((p) => p.recent).slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-[#080B11] text-slate-100 font-luxury-sans">
+    <div className="min-h-screen bg-white text-slate-900 font-luxury-sans">
       <AppHeader />
 
       <main>
@@ -596,18 +596,18 @@ function HomePage() {
               className="h-full w-full object-cover"
             />
             {/* Cinematic Gradient Overlays */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080B11]/90 via-[#080B11]/40 to-[#080B11]" />
-            <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#080B11]/85 via-transparent to-[#080B11]/50" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/50 to-white" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-r from-white/85 via-transparent to-white/50" />
             
             {/* Golden ambient lighting spot — smoothly shifts with mouse parallax */}
             <motion.div
               style={{ x: ambientGlowX, y: ambientGlowY }}
-              className="absolute left-[20%] top-[40%] h-[350px] w-[350px] rounded-full bg-[#D4AF37] opacity-[0.08] filter blur-[120px] pointer-events-none"
+              className="absolute left-[20%] top-[40%] h-[350px] w-[350px] rounded-full bg-[#D4AF37] opacity-[0.12] filter blur-[120px] pointer-events-none"
             />
           </div>
 
           {/* Blueprint Grid Overlay — very subtle luxury grid */}
-          <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
+          <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
           {/* 3D PARALLAX FLOATING CARDS (Desktop only, responsive, hardware accelerated) */}
           <div className="pointer-events-none absolute right-[4%] top-[12%] z-20 hidden flex-col gap-6 lg:flex xl:right-[6%]">
@@ -617,7 +617,7 @@ function HomePage() {
               <motion.div 
                 animate={{ y: [0, -12, 0] }}
                 transition={{ y: { duration: 6, repeat: Infinity, ease: "easeInOut" } }}
-                className="relative w-[260px] overflow-hidden rounded-[20px] bg-[#080B11]/85 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl border border-white/10"
+                className="relative w-[260px] overflow-hidden rounded-[20px] bg-slate-50/85 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] backdrop-blur-xl border border-slate-200"
               >
                 {/* Gold light sweeps */}
                 <div className="absolute top-0 right-0 h-1.5 w-16 bg-gradient-to-l from-[#D4AF37] to-transparent" />
@@ -625,12 +625,12 @@ function HomePage() {
                 <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <div className="text-[9px] font-extrabold uppercase tracking-widest text-[#D4AF37]">Featured Property</div>
-                    <h4 className="mt-1.5 text-[14px] font-bold text-slate-100 truncate">Prestige Raintree Park</h4>
-                    <div className="text-[11.5px] text-slate-400 mt-0.5">Whitefield, East Bangalore</div>
+                    <h4 className="mt-1.5 text-[14px] font-bold text-slate-900 truncate">Prestige Raintree Park</h4>
+                    <div className="text-[11.5px] text-slate-600 mt-0.5">Whitefield, East Bangalore</div>
                   </div>
                   <Award className="h-4.5 w-4.5 text-[#D4AF37] shrink-0" />
                 </div>
-                <div className="mt-4 border-t border-white/5 pt-3.5 flex justify-between items-baseline">
+                <div className="mt-4 border-t border-slate-100 pt-3.5 flex justify-between items-baseline">
                   <div>
                     <div className="text-[17px] font-black text-white">₹1.2 Cr+</div>
                     <div className="text-[10px] text-slate-500 mt-0.5">2, 3 & 4 BHK Apartments</div>
@@ -647,18 +647,18 @@ function HomePage() {
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 } }}
-                className="relative w-[260px] overflow-hidden rounded-[20px] bg-[#080B11]/85 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-xl border border-[#D4AF37]/20"
+                className="relative w-[260px] overflow-hidden rounded-[20px] bg-slate-50/85 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] backdrop-blur-xl border border-[#D4AF37]/20"
               >
                 <div className="absolute top-0 right-0 h-1.5 w-16 bg-gradient-to-l from-emerald-500 to-transparent" />
                 <div className="flex items-start justify-between gap-2.5">
                   <div>
                     <div className="text-[9px] font-extrabold uppercase tracking-widest text-[#D4AF37]">New Launch Deal</div>
-                    <h4 className="mt-1.5 text-[14px] font-bold text-slate-100 truncate">Sobha Neopolis</h4>
-                    <div className="text-[11.5px] text-slate-400 mt-0.5">Panathur, Bangalore</div>
+                    <h4 className="mt-1.5 text-[14px] font-bold text-slate-900 truncate">Sobha Neopolis</h4>
+                    <div className="text-[11.5px] text-slate-600 mt-0.5">Panathur, Bangalore</div>
                   </div>
                   <ShieldCheck className="h-4.5 w-4.5 text-emerald-400 shrink-0" />
                 </div>
-                <div className="mt-4 border-t border-white/5 pt-3.5 flex justify-between items-baseline">
+                <div className="mt-4 border-t border-slate-100 pt-3.5 flex justify-between items-baseline">
                   <div>
                     <div className="text-[17px] font-black text-white">₹1.55 Cr+</div>
                     <div className="text-[10px] text-slate-500 mt-0.5">Greek-themed Villas & Apts</div>
@@ -705,7 +705,7 @@ function HomePage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex justify-center lg:justify-start"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-[#080B11]/55 px-5 py-2 text-[12.5px] font-semibold text-slate-200 shadow-md backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-white/55 px-5 py-2 text-[12.5px] font-semibold text-slate-800 shadow-md backdrop-blur-md">
                 ⭐ Trusted by 500+ Luxury Home Buyers in Bangalore
               </span>
             </motion.div>
@@ -715,7 +715,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="mt-6 text-center text-[38px] font-bold leading-[1.12] tracking-tight text-slate-100 sm:text-[58px] lg:text-left font-luxury-sans"
+              className="mt-6 text-center text-[38px] font-bold leading-[1.12] tracking-tight text-slate-900 sm:text-[58px] lg:text-left font-luxury-sans"
               style={{ textShadow: '0 4px 30px rgba(0,0,0,0.6)' }}
             >
               Discover Luxury Living <br className="hidden sm:inline" />
@@ -727,7 +727,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-              className="mt-6 max-w-[620px] text-center text-[15.5px] leading-8 text-slate-300 sm:text-[17px] lg:text-left"
+              className="mt-6 max-w-[620px] text-center text-[15.5px] leading-8 text-slate-700 sm:text-[17px] lg:text-left"
             >
               An elite, handpicked portfolio of ultra-premium apartments and modern estates crafted for individuals with refined taste. RERA registered & fully verified.
             </motion.p>
@@ -751,12 +751,12 @@ function HomePage() {
                   }}
                   className={`flex items-center gap-3 rounded-[18px] border px-4 py-4 text-left backdrop-blur-sm transition duration-300 ${
                     activeCategory === item.key
-                      ? 'border-[#D4AF37] bg-white/10 shadow-md ring-1 ring-[#D4AF37]/30'
-                      : 'border-white/10 bg-[#080B11]/30 hover:border-white/25 hover:bg-[#0f131a]/50'
+                      ? 'border-[#D4AF37] bg-slate-200 shadow-md ring-1 ring-[#D4AF37]/30'
+                      : 'border-slate-200 bg-white/30 hover:border-slate-300 hover:bg-slate-50/50'
                   }`}
                 >
                   <span className="text-2xl">{item.icon}</span>
-                  <span className="text-[13px] font-bold leading-5 text-slate-200">{item.title}</span>
+                  <span className="text-[13px] font-bold leading-5 text-slate-800">{item.title}</span>
                 </button>
               ))}
             </motion.div>
@@ -766,7 +766,7 @@ function HomePage() {
           </div>
 
           {/* STATS STRIP — Absolutely pinned bottom */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/5 bg-[#080B11]/70 backdrop-blur-md">
+          <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-slate-100 bg-white/70 backdrop-blur-md">
             <div className="mx-auto flex max-w-[1380px] flex-wrap items-center justify-center gap-y-2 px-4 py-4 sm:px-6 lg:px-8">
               {[
                 { label: '99+ Projects', subtitle: 'Verified Listings' },
@@ -776,11 +776,11 @@ function HomePage() {
               ].map(({ label, subtitle }, i, arr) => (
                 <div key={label} className="flex items-center">
                   <div className="px-5 text-center sm:px-8">
-                    <span className="block text-[14px] font-black text-slate-100">{label}</span>
+                    <span className="block text-[14px] font-black text-slate-900">{label}</span>
                     <span className="block text-[10px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">{subtitle}</span>
                   </div>
                   {i < arr.length - 1 && (
-                    <span className="h-6 w-px bg-white/10 hidden sm:inline-block" />
+                    <span className="h-6 w-px bg-slate-200 hidden sm:inline-block" />
                   )}
                 </div>
               ))}
@@ -793,10 +793,10 @@ function HomePage() {
           <ScrollReveal>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-100 sm:text-[38px] tracking-tight">
+                <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-900 sm:text-[38px] tracking-tight">
                   Upcoming <span className="text-gold-gradient italic">New Launches</span>
                 </h2>
-                <p className="mt-1.5 text-[14px] text-slate-400 font-medium">Handpicked residential projects across East Bangalore's elite zones</p>
+                <p className="mt-1.5 text-[14px] text-slate-600 font-medium">Handpicked residential projects across East Bangalore's elite zones</p>
               </div>
               <Link to="/residential-properties-in-bangalore" className="shrink-0 text-[13px] font-bold uppercase tracking-wider text-[#D4AF37] transition hover:text-[#AA7C11] flex items-center gap-1.5">
                 View All Properties <ArrowRight className="h-4 w-4" />
@@ -814,7 +814,7 @@ function HomePage() {
                   className={`rounded-[10px] border px-4.5 py-2.5 text-[13px] font-bold transition duration-300 ${
                     activeTab === tab
                       ? 'border-[#D4AF37]/50 bg-[#D4AF37]/10 text-[#D4AF37]'
-                      : 'border-slate-800 bg-[#0f131a] text-slate-400 hover:border-slate-700 hover:text-slate-200'
+                      : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-700 hover:text-slate-800'
                   }`}
                 >
                   {tab}
@@ -849,10 +849,10 @@ function HomePage() {
                     <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-[11px] font-black uppercase tracking-widest text-amber-400 mb-3">
                       🚀 New Launches
                     </div>
-                    <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-100 sm:text-[36px] tracking-tight">
+                    <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-900 sm:text-[36px] tracking-tight">
                       Just Launched <span className="text-gold-gradient italic">Projects</span>
                     </h2>
-                    <p className="mt-1.5 text-[14px] text-slate-400">Fresh off the market — be the first to invest</p>
+                    <p className="mt-1.5 text-[14px] text-slate-600">Fresh off the market — be the first to invest</p>
                   </div>
                   <Link to="/residential-properties-in-bangalore" className="shrink-0 text-[13px] font-bold uppercase tracking-wider text-[#D4AF37] transition hover:text-[#AA7C11] flex items-center gap-1.5">
                     View All <ArrowRight className="h-4 w-4" />
@@ -873,7 +873,7 @@ function HomePage() {
           const hotDeals = projects.filter((p) => p.badge === 'Hot Deal' || p.priceValue <= 1.2).slice(0, 3)
           if (!hotDeals.length) return null
           return (
-            <section className="border-y border-slate-800 bg-[#0a0d14] py-20">
+            <section className="border-y border-slate-200 bg-gray-50 py-20">
               <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
                 <ScrollReveal>
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-10">
@@ -881,10 +881,10 @@ function HomePage() {
                       <div className="inline-flex items-center gap-2 rounded-full border border-rose-500/30 bg-rose-500/10 px-4 py-1.5 text-[11px] font-black uppercase tracking-widest text-rose-400 mb-3">
                         🔥 Limited Time
                       </div>
-                      <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-100 sm:text-[36px] tracking-tight">
+                      <h2 className="text-[28px] font-luxury-serif font-semibold text-slate-900 sm:text-[36px] tracking-tight">
                         Top <span className="text-gold-gradient italic">Deals</span>
                       </h2>
-                      <p className="mt-1.5 text-[14px] text-slate-400">Best value luxury homes — act before prices rise</p>
+                      <p className="mt-1.5 text-[14px] text-slate-600">Best value luxury homes — act before prices rise</p>
                     </div>
                     <Link to="/residential-properties-in-bangalore" className="shrink-0 text-[13px] font-bold uppercase tracking-wider text-[#D4AF37] transition hover:text-[#AA7C11] flex items-center gap-1.5">
                       View All <ArrowRight className="h-4 w-4" />
@@ -907,13 +907,13 @@ function HomePage() {
         {/* ── Recently Added ─────────────────────────────────────────── */}
         <section className="mx-auto max-w-[1380px] px-4 py-24 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="overflow-hidden rounded-[28px] border border-slate-800 bg-[#0f131a] p-8 shadow-2xl">
+            <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-2xl">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h3 className="text-[24px] font-luxury-serif font-semibold text-slate-100 sm:text-[34px] tracking-tight">
+                  <h3 className="text-[24px] font-luxury-serif font-semibold text-slate-900 sm:text-[34px] tracking-tight">
                     Recently Curated <span className="text-gold-gradient italic">Residences</span>
                   </h3>
-                  <p className="mt-1.5 text-[14px] text-slate-400">Latest luxury estates added to EastProject portfolio</p>
+                  <p className="mt-1.5 text-[14px] text-slate-600">Latest luxury estates added to EastProject portfolio</p>
                 </div>
                 <Link
                   to="/residential-properties-in-bangalore"
@@ -925,15 +925,15 @@ function HomePage() {
 
               <StaggerReveal className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {recent.map((p) => (
-                  <Link key={p.slug} to={`/project/${p.slug}`} className="group overflow-hidden rounded-[20px] border border-slate-800 bg-[#080B11] transition duration-300 hover:border-[#D4AF37]/35">
+                  <Link key={p.slug} to={`/project/${p.slug}`} className="group overflow-hidden rounded-[20px] border border-slate-200 bg-white transition duration-300 hover:border-[#D4AF37]/35">
                     <div className="overflow-hidden">
                       <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                     </div>
                     <div className="p-5">
                       <div className="text-[9px] font-bold uppercase tracking-widest text-[#D4AF37]">{p.builder}</div>
-                      <div className="mt-1.5 text-[17px] font-bold text-slate-100 line-clamp-1 group-hover:text-[#D4AF37] transition duration-300">{p.name}</div>
-                      <div className="mt-1 text-[13px] text-slate-400">📍 {p.microMarket}, East Bangalore</div>
-                      <div className="mt-3 text-[16.5px] font-black text-slate-100">{p.priceLabel}</div>
+                      <div className="mt-1.5 text-[17px] font-bold text-slate-900 line-clamp-1 group-hover:text-[#D4AF37] transition duration-300">{p.name}</div>
+                      <div className="mt-1 text-[13px] text-slate-600">📍 {p.microMarket}, East Bangalore</div>
+                      <div className="mt-3 text-[16.5px] font-black text-slate-900">{p.priceLabel}</div>
                     </div>
                   </Link>
                 ))}
@@ -943,7 +943,7 @@ function HomePage() {
         </section>
 
         {/* ── Trust strip ────────────────────────────────────────────── */}
-        <section className="border-t border-slate-800 bg-[#0f131a] py-16">
+        <section className="border-t border-slate-200 bg-slate-50 py-16">
           <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
               {[
@@ -954,8 +954,8 @@ function HomePage() {
               ].map((item) => (
                 <div key={item.label} className="flex flex-col items-center gap-2">
                   <div className="text-4xl">{item.icon}</div>
-                  <div className="text-[30px] font-black text-slate-100 mt-2">{item.stat}</div>
-                  <div className="text-[13px] font-bold text-slate-400 uppercase tracking-widest">{item.label}</div>
+                  <div className="text-[30px] font-black text-slate-900 mt-2">{item.stat}</div>
+                  <div className="text-[13px] font-bold text-slate-600 uppercase tracking-widest">{item.label}</div>
                 </div>
               ))}
             </div>

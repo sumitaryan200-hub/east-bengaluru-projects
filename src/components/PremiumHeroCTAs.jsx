@@ -185,7 +185,7 @@ export default function PremiumHeroCTAs() {
               whileHover={{ scale: 1.04, borderColor: 'rgba(212,175,55,0.5)', backgroundColor: 'rgba(255,255,255,0.08)' }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 18 }}
-              className="relative overflow-hidden w-full sm:w-auto flex h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/4 px-9 text-[13.5px] font-extrabold uppercase tracking-[0.12em] text-white backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(212,175,55,0.18)] transition-all z-20 cursor-pointer"
+              className="relative overflow-hidden w-full sm:w-auto flex h-14 items-center justify-center gap-3 rounded-full border border-slate-200 bg-slate-100 px-9 text-[13.5px] font-extrabold uppercase tracking-[0.12em] text-white backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_30px_rgba(212,175,55,0.18)] transition-all z-20 cursor-pointer"
             >
               {/* Localized hover glow background */}
               {hoveredButton === 1 && (
@@ -199,7 +199,7 @@ export default function PremiumHeroCTAs() {
               )}
               
               <Calendar className="h-4.5 w-4.5 text-[#D4AF37] shrink-0" />
-              <span className="font-extrabold text-slate-100">Schedule Visit</span>
+              <span className="font-extrabold text-slate-900">Schedule Visit</span>
             </motion.a>
           </MagneticWrapper>
         </motion.div>
@@ -229,7 +229,7 @@ export default function PremiumHeroCTAs() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 18 }}
-              className="relative overflow-hidden w-full sm:w-auto flex h-14 items-center justify-center gap-3 rounded-full bg-[#080B11]/92 px-9 text-[13.5px] font-extrabold uppercase tracking-[0.12em] text-[#D4AF37] border border-[#D4AF37]/35 shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-[#D4AF37]/80 z-20 cursor-pointer"
+              className="relative overflow-hidden w-full sm:w-auto flex h-14 items-center justify-center gap-3 rounded-full bg-white/92 px-9 text-[13.5px] font-extrabold uppercase tracking-[0.12em] text-[#D4AF37] border border-[#D4AF37]/35 shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:border-[#D4AF37]/80 z-20 cursor-pointer"
             >
               {/* Outer pulsing glow aura behind the button */}
               <motion.div
@@ -271,12 +271,12 @@ export default function PremiumHeroCTAs() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative w-full max-w-[500px] overflow-hidden rounded-[28px] border border-[#D4AF37]/30 bg-[#080B11]/95 p-8 shadow-[0_25px_60px_-15px_rgba(212,175,55,0.15)] z-10"
+              className="relative w-full max-w-[500px] overflow-hidden rounded-[28px] border border-[#D4AF37]/30 bg-white/95 p-8 shadow-[0_25px_60px_-15px_rgba(212,175,55,0.15)] z-10"
             >
               {/* Close Button */}
               <button
                 onClick={() => setModalOpen(false)}
-                className="absolute right-6 top-6 rounded-full border border-white/10 p-2 text-slate-400 hover:border-white/20 hover:text-white transition duration-200"
+                className="absolute right-6 top-6 rounded-full border border-slate-200 p-2 text-slate-600 hover:border-slate-200 hover:text-white transition duration-200"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -291,10 +291,10 @@ export default function PremiumHeroCTAs() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-4">
                       <Sparkles className="h-5 w-5 text-[#D4AF37]" />
                     </div>
-                    <h3 className="font-luxury-serif text-[24px] font-semibold text-slate-100 tracking-tight">
+                    <h3 className="font-luxury-serif text-[24px] font-semibold text-slate-900 tracking-tight">
                       Request <span className="text-gold-gradient italic">Concierge</span> Call
                     </h3>
-                    <p className="mt-2 text-[13.5px] leading-6 text-slate-400 max-w-[340px]">
+                    <p className="mt-2 text-[13.5px] leading-6 text-slate-600 max-w-[340px]">
                       Provide your details below to schedule an exclusive consultation with our luxury real estate specialists.
                     </p>
                   </div>
@@ -311,7 +311,7 @@ export default function PremiumHeroCTAs() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="e.g. Alexander Knight"
-                          className="h-12 w-full rounded-[14px] border border-white/10 bg-[#080B11] pl-11 pr-4 text-[14.5px] text-slate-100 placeholder:text-slate-600 outline-none transition focus:border-[#D4AF37]/65 focus:ring-1 focus:ring-[#D4AF37]/30"
+                          className="h-12 w-full rounded-[14px] border border-slate-200 bg-white pl-11 pr-4 text-[14.5px] text-slate-900 placeholder:text-slate-600 outline-none transition focus:border-[#D4AF37]/65 focus:ring-1 focus:ring-[#D4AF37]/30"
                         />
                       </div>
                     </div>
@@ -326,7 +326,7 @@ export default function PremiumHeroCTAs() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="e.g. +91 98765 43210"
-                          className="h-12 w-full rounded-[14px] border border-white/10 bg-[#080B11] pl-11 pr-4 text-[14.5px] text-slate-100 placeholder:text-slate-600 outline-none transition focus:border-[#D4AF37]/65 focus:ring-1 focus:ring-[#D4AF37]/30"
+                          className="h-12 w-full rounded-[14px] border border-slate-200 bg-white pl-11 pr-4 text-[14.5px] text-slate-900 placeholder:text-slate-600 outline-none transition focus:border-[#D4AF37]/65 focus:ring-1 focus:ring-[#D4AF37]/30"
                         />
                       </div>
                     </div>
@@ -336,12 +336,12 @@ export default function PremiumHeroCTAs() {
                       <select
                         value={formData.timeSlot}
                         onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                        className="h-12 w-full rounded-[14px] border border-white/10 bg-[#080B11] px-4 text-[14.5px] text-slate-200 outline-none transition focus:border-[#D4AF37]/65 focus:ring-1 focus:ring-[#D4AF37]/30 cursor-pointer"
+                        className="h-12 w-full rounded-[14px] border border-slate-200 bg-white px-4 text-[14.5px] text-slate-800 outline-none transition focus:border-[#D4AF37]/65 focus:ring-1 focus:ring-[#D4AF37]/30 cursor-pointer"
                       >
-                        <option value="As soon as possible" className="bg-[#080B11]">As soon as possible</option>
-                        <option value="Today Evening (4 PM - 7 PM)" className="bg-[#080B11]">Today Evening (4 PM - 7 PM)</option>
-                        <option value="Tomorrow Morning (10 AM - 1 PM)" className="bg-[#080B11]">Tomorrow Morning (10 AM - 1 PM)</option>
-                        <option value="Tomorrow Afternoon (1 PM - 4 PM)" className="bg-[#080B11]">Tomorrow Afternoon (1 PM - 4 PM)</option>
+                        <option value="As soon as possible" className="bg-white">As soon as possible</option>
+                        <option value="Today Evening (4 PM - 7 PM)" className="bg-white">Today Evening (4 PM - 7 PM)</option>
+                        <option value="Tomorrow Morning (10 AM - 1 PM)" className="bg-white">Tomorrow Morning (10 AM - 1 PM)</option>
+                        <option value="Tomorrow Afternoon (1 PM - 4 PM)" className="bg-white">Tomorrow Afternoon (1 PM - 4 PM)</option>
                       </select>
                     </div>
 
@@ -370,11 +370,11 @@ export default function PremiumHeroCTAs() {
                     <CheckCircle2 className="h-8 w-8 text-emerald-400" />
                   </motion.div>
                   
-                  <h3 className="font-luxury-serif text-[24px] font-semibold text-slate-100 tracking-tight">
+                  <h3 className="font-luxury-serif text-[24px] font-semibold text-slate-900 tracking-tight">
                     Thank You, <span className="text-[#D4AF37] italic font-medium">{formData.name.split(' ')[0]}</span>
                   </h3>
                   
-                  <p className="mt-3 text-[14.5px] leading-7 text-slate-300 max-w-[320px]">
+                  <p className="mt-3 text-[14.5px] leading-7 text-slate-700 max-w-[320px]">
                     Your VIP callback request has been received. Our luxury real estate concierge will connect with you <span className="text-[#D4AF37] font-semibold">{formData.timeSlot === 'As soon as possible' ? 'shortly' : 'at your preferred time'}</span>.
                   </p>
                   

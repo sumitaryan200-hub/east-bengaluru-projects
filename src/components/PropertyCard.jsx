@@ -17,11 +17,11 @@ function PropertyCard({ project }) {
           </button>
           <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-6 text-xs text-slate-600">
             <div className="text-center">
-              <div className="text-2xl leading-none text-slate-400">◌</div>
+              <div className="text-2xl leading-none text-slate-600">◌</div>
               <div>360 View</div>
             </div>
             <div className="text-center">
-              <PlaySquare className="mx-auto h-5 w-5 text-slate-400" />
+              <PlaySquare className="mx-auto h-5 w-5 text-slate-600" />
               <div>Video</div>
             </div>
           </div>
@@ -38,7 +38,7 @@ function PropertyCard({ project }) {
                 <MapPin className="h-4 w-4 text-slate-500" /> {project.microMarket}
               </div>
             </div>
-            <button className="rounded-full border border-slate-200 p-2 text-slate-400 transition hover:text-[#1f74d8]">
+            <button className="rounded-full border border-slate-200 p-2 text-slate-600 transition hover:text-[#1f74d8]">
               <Heart className="h-6 w-6" />
             </button>
           </div>
@@ -57,7 +57,7 @@ function PropertyCard({ project }) {
             <span className="font-semibold uppercase tracking-wide text-slate-700">Top Amenities</span>
             {project.amenities.map((item) => (
               <span key={item} className="inline-flex items-center gap-2">
-                <span className="text-slate-300">•</span>{item}
+                <span className="text-slate-700">•</span>{item}
               </span>
             ))}
           </div>

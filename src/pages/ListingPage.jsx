@@ -34,7 +34,7 @@ function SidebarSection({ title, collapsed, onToggle, children }) {
     <div className="border-t border-slate-100 py-5 first:border-t-0 first:pt-0">
       <button onClick={onToggle} className="flex w-full items-center justify-between text-left text-[15px] font-semibold text-slate-900">
         {title}
-        {collapsed ? <Plus className="h-4 w-4 text-slate-400" /> : <Minus className="h-4 w-4 text-slate-400" />}
+        {collapsed ? <Plus className="h-4 w-4 text-slate-600" /> : <Minus className="h-4 w-4 text-slate-600" />}
       </button>
       {!collapsed && <div className="mt-4">{children}</div>}
     </div>
@@ -63,7 +63,7 @@ function PropertyListCard({ project }) {
     if (project.priceValue >= 1.5 || project.slug.includes('raintree') || project.slug.includes('neopolis')) {
       return {
         text: 'Signature Luxury',
-        classes: 'border-[#D4AF37]/40 bg-gradient-to-r from-[#D4AF37]/20 to-[#AA7C11]/20 text-[#D4AF37] font-extrabold gold-border-glow'
+        classes: 'border-[#D4AF37]/40 bg-gradient-to-r from-[#D4AF37]/20 to-[#AA7C11]/20 text-[#D4AF37] font-extrabold '
       }
     }
     return {
@@ -80,10 +80,10 @@ function PropertyListCard({ project }) {
       onHoverEnd={() => setHovered(false)}
       whileHover={{ y: -6 }}
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
-      className={`overflow-hidden rounded-[24px] border bg-[#080B11]/92 text-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.65)] transition-all duration-300 ${
+      className={`overflow-hidden rounded-[24px] border bg-white/92 text-slate-900 shadow-[0_15px_40px_rgba(0,0,0,0.08)] transition-all duration-300 ${
         hovered 
-          ? 'border-[#D4AF37]/45 shadow-[0_20px_50px_rgba(212,175,55,0.12)] gold-border-glow' 
-          : 'border-slate-800/80'
+          ? 'border-[#D4AF37]/45 shadow-[0_20px_50px_rgba(212,175,55,0.12)] ' 
+          : 'border-slate-200'
       }`}
     >
       <div className="grid sm:grid-cols-[300px_1fr]">
@@ -129,7 +129,7 @@ function PropertyListCard({ project }) {
               className={`flex h-8.5 w-8.5 items-center justify-center rounded-full border shadow-lg backdrop-blur-md transition ${
                 compared 
                   ? 'bg-[#D4AF37]/20 border-[#D4AF37] text-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.3)]' 
-                  : 'bg-[#080B11]/75 border-white/10 text-slate-400 hover:text-white hover:border-white/30'
+                  : 'bg-white/75 border-slate-200 text-slate-600 hover:text-white hover:border-white/30'
               }`}
               title="Compare Property"
             >
@@ -146,24 +146,24 @@ function PropertyListCard({ project }) {
               className={`flex h-8.5 w-8.5 items-center justify-center rounded-full border shadow-lg backdrop-blur-md transition ${
                 wishlist 
                   ? 'bg-rose-500/20 border-rose-500 text-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.3)]' 
-                  : 'bg-[#080B11]/75 border-white/10 text-slate-400 hover:text-[#D4AF37] hover:border-white/30'
+                  : 'bg-white/75 border-slate-200 text-slate-600 hover:text-[#D4AF37] hover:border-white/30'
               }`}
               title="Add to Wishlist"
             >
-              <svg viewBox="0 0 24 24" className={`h-4 w-4 transition-transform duration-300 ${wishlist ? 'fill-rose-500 text-rose-500 scale-110' : 'fill-none text-slate-400'}`} stroke="currentColor" strokeWidth="2.5">
+              <svg viewBox="0 0 24 24" className={`h-4 w-4 transition-transform duration-300 ${wishlist ? 'fill-rose-500 text-rose-500 scale-110' : 'fill-none text-slate-600'}`} stroke="currentColor" strokeWidth="2.5">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
             </motion.button>
           </div>
 
           {/* Rating Badge */}
-          <div className="absolute bottom-4 left-4 flex items-center gap-1 rounded-[8px] bg-[#080B11]/80 px-2.5 py-1.5 backdrop-blur-md border border-white/5 shadow-md">
+          <div className="absolute bottom-4 left-4 flex items-center gap-1 rounded-[8px] bg-slate-50/80 px-2.5 py-1.5 backdrop-blur-md border border-slate-100 shadow-md">
             <span className="text-[#D4AF37] text-[10px] font-black">★</span>
             <span className="text-white text-[11.5px] font-bold">{project.rating || '4.8'}</span>
           </div>
 
           {/* Photo Count badge */}
-          <div className="absolute bottom-4 right-4 flex items-center gap-1 rounded-[8px] bg-[#080B11]/80 px-2 py-1.5 backdrop-blur-md border border-white/5 shadow-md text-[10px] font-bold text-slate-300">
+          <div className="absolute bottom-4 right-4 flex items-center gap-1 rounded-[8px] bg-slate-50/80 px-2 py-1.5 backdrop-blur-md border border-slate-100 shadow-md text-[10px] font-bold text-slate-700">
             <span>📷 1/{project.images.length || 5}</span>
           </div>
         </div>
@@ -174,8 +174,8 @@ function PropertyListCard({ project }) {
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
             <div>
               <div className="text-[10px] font-black uppercase tracking-[0.2em] text-[#D4AF37]">{project.builder}</div>
-              <h3 className="mt-1 text-[21px] font-extrabold text-slate-100 hover:text-[#D4AF37] transition duration-300">{project.name}</h3>
-              <div className="mt-2 flex items-center gap-1.5 text-[13px] font-medium text-slate-400">
+              <h3 className="mt-1 text-[21px] font-extrabold text-slate-900 hover:text-[#D4AF37] transition duration-300">{project.name}</h3>
+              <div className="mt-2 flex items-center gap-1.5 text-[13px] font-medium text-slate-600">
                 <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 shrink-0 fill-none stroke-[#D4AF37]/75" strokeWidth="2.5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                 </svg>
@@ -190,10 +190,10 @@ function PropertyListCard({ project }) {
           </div>
 
           {/* Configurations Grid */}
-          <div className="mt-5 grid gap-3 grid-cols-2 sm:grid-cols-3 border-y border-white/5 py-4">
+          <div className="mt-5 grid gap-3 grid-cols-2 sm:grid-cols-3 border-y border-slate-100 py-4">
             {project.configurations.slice(0, 3).map((c) => (
-              <div key={c.type} className="rounded-[12px] bg-white/3 border border-white/5 p-3 flex flex-col justify-between">
-                <div className="text-[12px] font-bold text-slate-400">{c.type}</div>
+              <div key={c.type} className="rounded-[12px] bg-slate-100 border border-slate-100 p-3 flex flex-col justify-between">
+                <div className="text-[12px] font-bold text-slate-600">{c.type}</div>
                 <div className="text-[11px] text-slate-500 mt-0.5">{c.area}</div>
                 <div className="text-[13px] font-extrabold text-[#D4AF37] mt-1.5">{c.price}</div>
               </div>
@@ -201,34 +201,34 @@ function PropertyListCard({ project }) {
           </div>
 
           {/* Summary description */}
-          <p className="mt-4 line-clamp-2 text-[13.5px] leading-6 text-slate-400 font-medium">{project.summary}</p>
+          <p className="mt-4 line-clamp-2 text-[13.5px] leading-6 text-slate-600 font-medium">{project.summary}</p>
 
           {/* Core Amenities Custom Icons Row */}
-          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/5 pt-4">
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
             <div className="flex items-center gap-2">
               <span className="text-[9.5px] font-black uppercase tracking-widest text-[#D4AF37]/80">Key Amenities</span>
               <div className="flex gap-2">
                 {/* Swimming Pool */}
-                <span className="h-6.5 w-6.5 rounded-md bg-[#080B11] border border-white/5 flex items-center justify-center" title="Swimming Pool">
+                <span className="h-6.5 w-6.5 rounded-md bg-white border border-slate-100 flex items-center justify-center" title="Swimming Pool">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M2 6c.6 0 1.2-.2 1.6-.6L5 4.3c.8-.8 2-.8 2.8 0l1.4 1.1c.4.4 1 .6 1.6.6" />
                     <path d="M2 12c.6 0 1.2-.2 1.6-.6l1.4-1.1c.8-.8 2-.8 2.8 0" />
                   </svg>
                 </span>
                 {/* Gym */}
-                <span className="h-6.5 w-6.5 rounded-md bg-[#080B11] border border-white/5 flex items-center justify-center" title="Fitness Centre">
+                <span className="h-6.5 w-6.5 rounded-md bg-white border border-slate-100 flex items-center justify-center" title="Fitness Centre">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-[#D4AF37]" fill="currentColor">
                     <path d="M6.5 5h1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zM9 11h6v2H9z" />
                   </svg>
                 </span>
                 {/* Clubhouse */}
-                <span className="h-6.5 w-6.5 rounded-md bg-[#080B11] border border-white/5 flex items-center justify-center" title="Luxury Clubhouse">
+                <span className="h-6.5 w-6.5 rounded-md bg-white border border-slate-100 flex items-center justify-center" title="Luxury Clubhouse">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M3 21h18M3 10h18M5 21V10M19 21V10" />
                   </svg>
                 </span>
                 {/* Security */}
-                <span className="h-6.5 w-6.5 rounded-md bg-[#080B11] border border-white/5 flex items-center justify-center" title="24x7 Security">
+                <span className="h-6.5 w-6.5 rounded-md bg-white border border-slate-100 flex items-center justify-center" title="24x7 Security">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-[#D4AF37]" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M12 22s8-4 8-10V5l-8-3" />
                   </svg>
@@ -240,10 +240,10 @@ function PropertyListCard({ project }) {
           </div>
 
           {/* Action Row */}
-          <div className="mt-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 border-t border-white/5 pt-4">
+          <div className="mt-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 border-t border-slate-100 pt-4">
             <Link
               to={`/project/${project.slug}`}
-              className="flex h-[44px] items-center justify-center rounded-full border border-white/15 bg-white/4 px-6 text-[13px] font-bold text-slate-200 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
+              className="flex h-[44px] items-center justify-center rounded-full border border-slate-200 bg-slate-100 px-6 text-[13px] font-bold text-slate-800 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
             >
               View Details
             </Link>
@@ -366,12 +366,12 @@ function ListingPage() {
 
         <SidebarSection title="Locality" collapsed={collapsed.locality} onToggle={() => toggleCollapse('locality')}>
           <div className="relative mb-3">
-            <Search className="absolute left-3 top-[11px] h-3.5 w-3.5 text-slate-400" />
+            <Search className="absolute left-3 top-[11px] h-3.5 w-3.5 text-slate-600" />
             <input
               value={localitySearch}
               onChange={(e) => setLocalitySearch(e.target.value)}
               placeholder="Search locality"
-              className="w-full rounded-[8px] border border-slate-200 py-2.5 pl-8 pr-3 text-[13px] outline-none placeholder:text-slate-400"
+              className="w-full rounded-[8px] border border-slate-200 py-2.5 pl-8 pr-3 text-[13px] outline-none placeholder:text-slate-600"
             />
           </div>
           <div className="max-h-[200px] overflow-y-auto space-y-2">
@@ -500,7 +500,7 @@ function ListingPage() {
                   <Link key={p.slug} to={`/project/${p.slug}`} className="group overflow-hidden rounded-[14px] border border-slate-200 transition hover:shadow-md">
                     <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover" />
                     <div className="p-4">
-                      <div className="text-[11px] font-semibold uppercase tracking-widest text-slate-400">{p.builder}</div>
+                      <div className="text-[11px] font-semibold uppercase tracking-widest text-slate-600">{p.builder}</div>
                       <div className="mt-1 text-[16px] font-bold text-slate-900">{p.name}</div>
                       <div className="mt-1 text-[13px] text-slate-500">{p.priceLabel}</div>
                     </div>

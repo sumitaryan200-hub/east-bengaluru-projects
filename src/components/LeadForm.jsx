@@ -63,7 +63,7 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      className="relative w-full rounded-[24px] border border-[#D4AF37]/20 bg-[#080B11]/95 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.8)] backdrop-blur-2xl"
+      className="relative w-full rounded-[24px] border border-[#D4AF37]/20 bg-white/95 p-6 shadow-[0_25px_60px_rgba(0,0,0,0.10)] backdrop-blur-2xl"
     >
       {/* Gold top bar */}
       <div className="absolute top-0 left-0 right-0 h-1 rounded-t-[24px] bg-gradient-to-r from-[#D4AF37] to-[#AA7C11]" />
@@ -72,7 +72,7 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
       {onClose && (
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 h-8 w-8 flex items-center justify-center rounded-full bg-white/5 text-slate-400 hover:text-white transition"
+          className="absolute top-4 right-4 h-8 w-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 hover:text-white transition"
         >
           ✕
         </button>
@@ -90,7 +90,7 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
             <h3 className="text-[22px] font-black text-[#D4AF37]">
               {isBrochure ? 'WhatsApp Khul Gaya!' : 'Thank You!'}
             </h3>
-            <p className="text-[14px] text-slate-300 max-w-[280px]">
+            <p className="text-[14px] text-slate-700 max-w-[280px]">
               {isBrochure
                 ? 'WhatsApp pe message ready hai — bas Send dabao. Sumit bhai brochure bhej denge! 🚀'
                 : 'WhatsApp pe message ready hai — bas Send dabao. Expert jald hi contact karenge!'}
@@ -110,11 +110,11 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-2xl">{isBrochure ? '📄' : '📞'}</span>
-                <h3 className="text-[18px] font-black text-slate-100">
+                <h3 className="text-[18px] font-black text-slate-900">
                   {isBrochure ? 'Download Brochure' : 'Get Free Consultation'}
                 </h3>
               </div>
-              <p className="text-[12px] text-slate-400 ml-8">
+              <p className="text-[12px] text-slate-600 ml-8">
                 {isBrochure
                   ? 'Apna number do — brochure WhatsApp pe bhejte hain'
                   : 'Our expert will call you back within 1 hour'}
@@ -128,7 +128,7 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
               onChange={handleChange}
               placeholder="Your Full Name *"
               required
-              className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
+              className="w-full rounded-[12px] border border-slate-200 bg-slate-100 px-4 py-3 text-[14px] text-slate-900 placeholder:text-slate-400 outline-none focus:border-[#D4AF37]/70 transition"
             />
 
             {/* Phone */}
@@ -139,7 +139,7 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
               placeholder="WhatsApp Number *"
               required
               type="tel"
-              className="w-full rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-[14px] text-slate-100 placeholder:text-slate-500 outline-none focus:border-[#D4AF37]/50 transition"
+              className="w-full rounded-[12px] border border-slate-200 bg-slate-100 px-4 py-3 text-[14px] text-slate-900 placeholder:text-slate-400 outline-none focus:border-[#D4AF37]/70 transition"
             />
 
             {/* Budget — only for consultation */}
@@ -148,7 +148,7 @@ export default function LeadForm({ propertyName = '', onClose, mode = 'consultat
                 name="budget"
                 value={form.budget}
                 onChange={handleChange}
-                className="w-full rounded-[12px] border border-white/10 bg-[#080B11] px-4 py-3 text-[14px] text-slate-300 outline-none focus:border-[#D4AF37]/50 transition"
+                className="w-full rounded-[12px] border border-slate-200 bg-white px-4 py-3 text-[14px] text-slate-700 outline-none focus:border-[#D4AF37]/70 transition"
               >
                 <option value="">Select Budget Range</option>
                 <option value="Under ₹1 Cr">Under ₹1 Cr</option>

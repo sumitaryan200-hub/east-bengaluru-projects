@@ -59,7 +59,7 @@ function BuilderPage() {
                   <div className="mt-4 flex flex-wrap items-center gap-4 text-[13px]">
                     <div className="flex items-center gap-1.5">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`h-4 w-4 ${i < Math.floor(builder.rating) ? 'fill-[#f5a623] text-[#f5a623]' : 'text-slate-300'}`} />
+                        <Star key={i} className={`h-4 w-4 ${i < Math.floor(builder.rating) ? 'fill-[#f5a623] text-[#f5a623]' : 'text-slate-700'}`} />
                       ))}
                       <span className="font-semibold text-slate-700">{builder.rating} Rating</span>
                     </div>

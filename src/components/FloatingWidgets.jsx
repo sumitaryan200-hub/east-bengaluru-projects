@@ -141,12 +141,12 @@ export default function FloatingWidgets() {
                 animate={{ y: [0, -4, 0] }}
                 transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
                 onClick={handleOpenChat}
-                className="hidden sm:block max-w-[240px] rounded-[18px] border border-[#D4AF37]/20 bg-[#080B11]/92 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] backdrop-blur-md cursor-pointer hover:border-[#D4AF37]/50 transition-all text-left"
+                className="hidden sm:block max-w-[240px] rounded-[18px] border border-[#D4AF37]/20 bg-white/92 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.6)] backdrop-blur-md cursor-pointer hover:border-[#D4AF37]/50 transition-all text-left"
               >
                 <div className="text-[11px] font-bold uppercase tracking-widest text-[#D4AF37] mb-1 flex items-center gap-1">
                   <Sparkles className="h-3 w-3" /> Online Support
                 </div>
-                <div className="text-[13px] leading-relaxed text-slate-300 font-medium">
+                <div className="text-[13px] leading-relaxed text-slate-700 font-medium">
                   Hi 👋 Looking for luxury homes? Let's chat.
                 </div>
               </motion.div>
@@ -158,10 +158,10 @@ export default function FloatingWidgets() {
                 transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
                 whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.96 }}
-                className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#D4AF37]/50 bg-[#080B11] p-0.5 shadow-[0_8px_30px_rgba(212,175,55,0.22)] hover:shadow-[0_12px_35px_rgba(212,175,55,0.48)] transition-all cursor-pointer overflow-visible"
+                className="relative flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#D4AF37]/50 bg-white p-0.5 shadow-[0_8px_30px_rgba(212,175,55,0.22)] hover:shadow-[0_12px_35px_rgba(212,175,55,0.48)] transition-all cursor-pointer overflow-visible"
               >
                 {/* Profile Image */}
-                <div className="h-full w-full overflow-hidden rounded-full border border-white/5">
+                <div className="h-full w-full overflow-hidden rounded-full border border-slate-100">
                   <img
                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
                     alt="Pooja Agarwal"
@@ -186,10 +186,10 @@ export default function FloatingWidgets() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.85, opacity: 0, y: 30 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="fixed bottom-24 right-4 sm:right-6 z-40 w-[calc(100vw-32px)] sm:w-[370px] h-[520px] flex flex-col overflow-hidden rounded-[24px] border border-[#D4AF37]/25 bg-[#080B11]/92 shadow-[0_20px_60px_-10px_rgba(212,175,55,0.14)] backdrop-blur-xl gold-border-glow"
+              className="fixed bottom-24 right-4 sm:right-6 z-40 w-[calc(100vw-32px)] sm:w-[370px] h-[520px] flex flex-col overflow-hidden rounded-[24px] border border-[#D4AF37]/25 bg-white/92 shadow-[0_20px_60px_-10px_rgba(212,175,55,0.14)] backdrop-blur-xl "
             >
               {/* HEADER */}
-              <div className="flex items-center justify-between border-b border-[#D4AF37]/20 bg-[#080B11]/95 px-5 py-4">
+              <div className="flex items-center justify-between border-b border-[#D4AF37]/20 bg-white/95 px-5 py-4">
                 <div className="flex items-center gap-3">
                   {/* Small Profile Frame */}
                   <div className="relative h-11 w-11 rounded-full border border-[#D4AF37]/45 p-0.5 shrink-0 bg-[#0b0f17]">
@@ -201,16 +201,16 @@ export default function FloatingWidgets() {
                     <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 border border-[#080B11]" />
                   </div>
                   <div className="text-left">
-                    <div className="text-[14px] font-bold text-slate-100 flex items-center gap-1">
+                    <div className="text-[14px] font-bold text-slate-900 flex items-center gap-1">
                       Pooja Agarwal <Sparkles className="h-3 w-3 text-[#D4AF37]" />
                     </div>
-                    <div className="text-[11px] font-medium text-slate-400">Luxury Property Advisor</div>
+                    <div className="text-[11px] font-medium text-slate-600">Luxury Property Advisor</div>
                   </div>
                 </div>
                 {/* Close Button */}
                 <button
                   onClick={() => setChatOpen(false)}
-                  className="rounded-full border border-white/10 p-1.5 text-slate-400 hover:border-white/20 hover:text-white transition duration-200"
+                  className="rounded-full border border-slate-200 p-1.5 text-slate-600 hover:border-slate-200 hover:text-white transition duration-200"
                 >
                   <X className="h-4.5 w-4.5" />
                 </button>
@@ -232,7 +232,7 @@ export default function FloatingWidgets() {
                       className={`rounded-[18px] px-4 py-3 text-[13.5px] leading-relaxed whitespace-pre-line ${
                         msg.sender === 'user'
                           ? 'bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-[#080B11] font-bold rounded-tr-none shadow-[0_4px_12px_rgba(212,175,55,0.15)]'
-                          : 'bg-white/5 border border-white/10 text-slate-200 rounded-tl-none backdrop-blur-sm'
+                          : 'bg-slate-100 border border-slate-200 text-slate-800 rounded-tl-none backdrop-blur-sm'
                       }`}
                     >
                       {msg.text}
@@ -244,7 +244,7 @@ export default function FloatingWidgets() {
                 {/* Simulated Typing State */}
                 {isTyping && (
                   <div className="flex flex-col items-start mr-auto max-w-[80%]">
-                    <div className="rounded-[18px] rounded-tl-none bg-white/5 border border-white/10 px-4.5 py-3.5 backdrop-blur-sm">
+                    <div className="rounded-[18px] rounded-tl-none bg-slate-100 border border-slate-200 px-4.5 py-3.5 backdrop-blur-sm">
                       <span className="flex items-center gap-1.5 py-0.5">
                         <span className="h-2 w-2 animate-bounce rounded-full bg-[#D4AF37]" style={{ animationDelay: '0ms' }} />
                         <span className="h-2 w-2 animate-bounce rounded-full bg-[#D4AF37]" style={{ animationDelay: '150ms' }} />
@@ -257,39 +257,39 @@ export default function FloatingWidgets() {
               </div>
 
               {/* PROPERTY INTERACTIVE SHORTCUTS */}
-              <div className="px-4 py-2 bg-[#080B11]/95 border-t border-white/5 overflow-x-auto whitespace-nowrap scrollbar-none flex gap-2">
+              <div className="px-4 py-2 bg-white/95 border-t border-slate-100 overflow-x-auto whitespace-nowrap scrollbar-none flex gap-2">
                 <button
                   onClick={() => handleShortcutClick('price')}
                   disabled={isTyping}
-                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-800 bg-[#0f131a]/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-300 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-700 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
                 >
                   💰 Price Ranges
                 </button>
                 <button
                   onClick={() => handleShortcutClick('location')}
                   disabled={isTyping}
-                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-800 bg-[#0f131a]/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-300 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-700 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
                 >
                   📍 Hot Locations
                 </button>
                 <button
                   onClick={() => handleShortcutClick('visit')}
                   disabled={isTyping}
-                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-800 bg-[#0f131a]/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-300 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-700 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
                 >
                   📅 Schedule Visit
                 </button>
                 <button
                   onClick={() => handleShortcutClick('plans')}
                   disabled={isTyping}
-                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-800 bg-[#0f131a]/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-300 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
+                  className="inline-flex shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50/60 px-3.5 py-2 text-[11.5px] font-bold text-slate-700 transition hover:border-[#D4AF37]/50 hover:text-[#D4AF37] cursor-pointer disabled:opacity-50"
                 >
                   🏠 Floor Plans
                 </button>
               </div>
 
               {/* QUICK CONNECT BAR */}
-              <div className="grid grid-cols-2 gap-2 px-5 py-2 bg-[#080B11]/95 border-t border-white/5">
+              <div className="grid grid-cols-2 gap-2 px-5 py-2 bg-white/95 border-t border-slate-100">
                 {/* WhatsApp button */}
                 <a
                   href="https://wa.me/918102422651?text=Hi,%20I'm%20interested%20in%20luxury%20properties%20in%20Bangalore."
@@ -313,7 +313,7 @@ export default function FloatingWidgets() {
               {/* INPUT BOX */}
               <form
                 onSubmit={handleSendMessage}
-                className="flex items-center gap-2 border-t border-white/5 bg-[#080B11]/98 px-5 py-3"
+                className="flex items-center gap-2 border-t border-slate-100 bg-white px-5 py-3"
               >
                 <input
                   type="text"
@@ -321,7 +321,7 @@ export default function FloatingWidgets() {
                   onChange={(e) => setInputVal(e.target.value)}
                   placeholder="Type a bespoke enquiry..."
                   disabled={isTyping}
-                  className="w-full bg-transparent text-[13.5px] text-slate-100 placeholder:text-slate-600 outline-none disabled:opacity-50"
+                  className="w-full bg-transparent text-[13.5px] text-slate-900 placeholder:text-slate-600 outline-none disabled:opacity-50"
                 />
                 <button
                   type="submit"
@@ -340,7 +340,7 @@ export default function FloatingWidgets() {
       {showTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-800 bg-[#080B11]/90 text-slate-300 shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition duration-300"
+          className="fixed bottom-6 right-6 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-slate-700 shadow-[0_4px_15px_rgba(0,0,0,0.5)] hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition duration-300"
         >
           <ArrowUp className="h-5 w-5" />
         </button>

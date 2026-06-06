@@ -6,7 +6,7 @@ function AppFooter() {
   const featuredBuilders = builders.slice(0, 10)
 
   return (
-    <footer className="border-t border-white/5 bg-[#080B11] text-slate-300">
+    <footer className="border-t border-slate-100 bg-white text-slate-700">
       {/* Main footer grid */}
       <div className="mx-auto max-w-[1380px] px-4 pt-14 pb-10 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr_1fr_1fr]">
@@ -14,10 +14,10 @@ function AppFooter() {
           {/* Brand column */}
           <div>
             <div className="flex h-10 items-center text-[18px] font-black text-[#D4AF37] tracking-tight">EastProject.in</div>
-            <p className="mt-4 text-[13px] leading-6 text-slate-400">
+            <p className="mt-4 text-[13px] leading-6 text-slate-600">
               Bangalore's premium AI-powered real estate discovery platform. Explore 2, 3 &amp; 4 BHK apartments from top builders across East Bangalore.
             </p>
-            <div className="mt-6 space-y-2 text-[13px] text-slate-400">
+            <div className="mt-6 space-y-2 text-[13px] text-slate-600">
               <div>📍 Bangalore, Karnataka</div>
               <div>📞 +91 99999 99999</div>
               <div>✉️ info@eastproject.in</div>
@@ -33,15 +33,15 @@ function AppFooter() {
           <div>
             <div className="text-[13px] font-semibold uppercase tracking-widest text-slate-500 mb-5">Quick Links</div>
             <ul className="space-y-3 text-[13px]">
-              <li><Link to="/" className="transition hover:text-white">Home</Link></li>
-              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-white">Residential Properties</Link></li>
-              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-white">New Launches</Link></li>
-              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-white">Ready to Move</Link></li>
-              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-white">Under Construction</Link></li>
-              <li><a href="#" className="transition hover:text-white">Home Loan</a></li>
-              <li><a href="#" className="transition hover:text-white">EMI Calculator</a></li>
-              <li><Link to="/contact" className="transition hover:text-white">About Us</Link></li>
-              <li><Link to="/contact" className="transition hover:text-white">Contact Us</Link></li>
+              <li><Link to="/" className="transition hover:text-[#D4AF37]">Home</Link></li>
+              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-[#D4AF37]">Residential Properties</Link></li>
+              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-[#D4AF37]">New Launches</Link></li>
+              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-[#D4AF37]">Ready to Move</Link></li>
+              <li><Link to="/residential-properties-in-bangalore" className="transition hover:text-[#D4AF37]">Under Construction</Link></li>
+              <li><a href="#" className="transition hover:text-[#D4AF37]">Home Loan</a></li>
+              <li><a href="#" className="transition hover:text-[#D4AF37]">EMI Calculator</a></li>
+              <li><Link to="/contact" className="transition hover:text-[#D4AF37]">About Us</Link></li>
+              <li><Link to="/contact" className="transition hover:text-[#D4AF37]">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -51,7 +51,7 @@ function AppFooter() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3 text-[13px]">
               {bangaloreLocalities.slice(0, 16).map((loc) => (
                 <li key={loc}>
-                  <Link to="/residential-properties-in-bangalore" className="transition hover:text-white">{loc}</Link>
+                  <Link to="/residential-properties-in-bangalore" className="transition hover:text-[#D4AF37]">{loc}</Link>
                 </li>
               ))}
             </ul>
@@ -63,7 +63,7 @@ function AppFooter() {
             <ul className="space-y-3 text-[13px]">
               {featuredBuilders.map((b) => (
                 <li key={b.slug}>
-                  <Link to={`/builders/${b.slug}`} className="transition hover:text-white">{b.name}</Link>
+                  <Link to={`/builders/${b.slug}`} className="transition hover:text-[#D4AF37]">{b.name}</Link>
                 </li>
               ))}
             </ul>
@@ -71,20 +71,20 @@ function AppFooter() {
         </div>
 
         {/* Secondary links row */}
-        <div className="mt-12 border-t border-slate-800 pt-8">
+        <div className="mt-12 border-t border-slate-200 pt-8">
           <div className="flex flex-wrap gap-x-6 gap-y-3 text-[12px] text-slate-500 mb-6">
-            <a href="#" className="transition hover:text-slate-300">Privacy Policy</a>
-            <a href="#" className="transition hover:text-slate-300">Terms &amp; Conditions</a>
-            <a href="#" className="transition hover:text-slate-300">Disclaimer</a>
-            <a href="#" className="transition hover:text-slate-300">RERA Information</a>
-            <a href="#" className="transition hover:text-slate-300">Sitemap</a>
-            <a href="#" className="transition hover:text-slate-300">Feedback</a>
+            <a href="#" className="transition hover:text-slate-700">Privacy Policy</a>
+            <a href="#" className="transition hover:text-slate-700">Terms &amp; Conditions</a>
+            <a href="#" className="transition hover:text-slate-700">Disclaimer</a>
+            <a href="#" className="transition hover:text-slate-700">RERA Information</a>
+            <a href="#" className="transition hover:text-slate-700">Sitemap</a>
+            <a href="#" className="transition hover:text-slate-700">Feedback</a>
           </div>
 
           {/* RERA Disclaimer */}
-          <div className="rounded-[16px] border border-slate-800 bg-[#0f131a] p-5 text-[11.5px] leading-[1.8] text-slate-400">
+          <div className="rounded-[16px] border border-slate-200 bg-slate-50 p-5 text-[11.5px] leading-[1.8] text-slate-600">
             <span className="text-[#D4AF37] font-bold">RERA Disclaimer: </span>
-            This website is managed by RERA-authorised real estate agent <span className="text-slate-200 font-semibold">Gautam Agrawal</span>. Project information, pricing, availability, floor plans, specifications, images and possession timelines are subject to change by the respective developer. Images are representational. Users may receive updates on their registered contact details. Information may be shared with RERA-registered developers as required.
+            This website is managed by RERA-authorised real estate agent <span className="text-slate-800 font-semibold">Gautam Agrawal</span>. Project information, pricing, availability, floor plans, specifications, images and possession timelines are subject to change by the respective developer. Images are representational. Users may receive updates on their registered contact details. Information may be shared with RERA-registered developers as required.
           </div>
 
           {/* Copyright */}
