@@ -177,14 +177,14 @@ function Gallery({ images, projectName }) {
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 backdrop-blur-md">
           <button
             onClick={() => setModalOpen(false)}
-            className="absolute right-6 top-6 rounded-full bg-slate-200 p-3 text-white transition hover:bg-white/20 hover:text-[#D4AF37]"
+            className="absolute right-6 top-6 rounded-full bg-slate-700 p-3 text-white transition hover:bg-slate-800 hover:text-[#D4AF37]"
           >
             <X className="h-6 w-6" />
           </button>
           <button
             onClick={() => setModalIndex((i) => Math.max(0, i - 1))}
             disabled={modalIndex === 0}
-            className="absolute left-6 rounded-full bg-slate-200 p-3 text-white transition hover:bg-white/20 disabled:opacity-20 disabled:hover:text-white"
+            className="absolute left-6 rounded-full bg-slate-700 p-3 text-white transition hover:bg-slate-800 disabled:opacity-20"
           >
             <ChevronLeft className="h-8 w-8" />
           </button>
@@ -196,7 +196,7 @@ function Gallery({ images, projectName }) {
           <button
             onClick={() => setModalIndex((i) => Math.min(images.length - 1, i + 1))}
             disabled={modalIndex === images.length - 1}
-            className="absolute right-6 rounded-full bg-slate-200 p-3 text-white transition hover:bg-white/20 disabled:opacity-20 disabled:hover:text-white"
+            className="absolute right-6 rounded-full bg-slate-700 p-3 text-white transition hover:bg-slate-800 disabled:opacity-20"
           >
             <ChevronRight className="h-8 w-8" />
           </button>
@@ -317,7 +317,7 @@ function ProjectDetailPage() {
                       </div>
                     </div>
                     <div className="shrink-0 text-left sm:text-right">
-                      <div className="text-[26px] font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(212,175,55,0.15)]">{project.priceLabel}</div>
+                      <div className="text-[26px] font-black text-[#D4AF37] tracking-tight">{project.priceLabel}</div>
                       <div className="text-[13px] text-slate-600 mt-0.5">{project.configurations[0]?.area} onwards</div>
                       <div className="mt-2 text-[11px] font-bold text-slate-500 uppercase tracking-widest">Updated: {project.updated}</div>
                     </div>
@@ -367,7 +367,7 @@ function ProjectDetailPage() {
                             <span className="text-[11px] text-slate-500 font-bold uppercase tracking-widest">Carpet Area</span>
                           </div>
                           
-                          <div className="text-[28px] font-black text-white tracking-tight drop-shadow-[0_2px_5px_rgba(255,255,255,0.05)] font-luxury-sans">
+                          <div className="text-[28px] font-black text-[#D4AF37] tracking-tight font-luxury-sans">
                             {c.price}
                           </div>
                           
@@ -653,3 +653,4 @@ function ProjectDetailPage() {
 }
 
 export default ProjectDetailPage
+                                                                                     

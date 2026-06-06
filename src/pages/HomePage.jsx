@@ -581,33 +581,24 @@ function HomePage() {
           onMouseMove={handleMouseMove}
           className="relative flex min-h-[95vh] flex-col justify-center overflow-hidden border-b border-[#D4AF37]/10"
         >
-          {/* Background Cinematic Video Player */}
-          <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
-            <motion.video
-              initial={{ scale: 1.1, opacity: 0 }}
-              animate={{ scale: 1.0, opacity: 0.65 }}
-              transition={{ duration: 2.2, ease: "easeOut" }}
-              src="/hero-luxury.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="h-full w-full object-cover"
-            />
-            {/* Cinematic Gradient Overlays */}
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/90 via-white/50 to-white" />
-            <div className="absolute inset-0 z-10 bg-gradient-to-r from-white/85 via-transparent to-white/50" />
-            
-            {/* Golden ambient lighting spot — smoothly shifts with mouse parallax */}
+          {/* Background — Light luxury gradient with animated orbs */}
+          <div className="absolute inset-0 z-0 h-full w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-amber-50/30">
+            {/* Animated gold orb 1 */}
             <motion.div
               style={{ x: ambientGlowX, y: ambientGlowY }}
-              className="absolute left-[20%] top-[40%] h-[350px] w-[350px] rounded-full bg-[#D4AF37] opacity-[0.12] filter blur-[120px] pointer-events-none"
+              className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#D4AF37] opacity-[0.07] blur-[130px] pointer-events-none"
             />
+            {/* Animated gold orb 2 */}
+            <motion.div
+              style={{ x: card2X, y: card2Y }}
+              className="absolute right-[5%] bottom-[10%] h-[400px] w-[400px] rounded-full bg-amber-300 opacity-[0.08] blur-[120px] pointer-events-none"
+            />
+            {/* Subtle diagonal lines */}
+            <div className="absolute inset-0 opacity-30" style={{backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(212,175,55,0.04) 40px, rgba(212,175,55,0.04) 41px)'}} />
           </div>
 
-          {/* Blueprint Grid Overlay — very subtle luxury grid */}
-          <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
+          {/* Blueprint Grid Overlay */}
+          <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
           {/* 3D PARALLAX FLOATING CARDS (Desktop only, responsive, hardware accelerated) */}
           <div className="pointer-events-none absolute right-[4%] top-[12%] z-20 hidden flex-col gap-6 lg:flex xl:right-[6%]">
@@ -617,7 +608,7 @@ function HomePage() {
               <motion.div 
                 animate={{ y: [0, -12, 0] }}
                 transition={{ y: { duration: 6, repeat: Infinity, ease: "easeInOut" } }}
-                className="relative w-[260px] overflow-hidden rounded-[20px] bg-slate-50/85 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] backdrop-blur-xl border border-slate-200"
+                className="relative w-[260px] overflow-hidden rounded-[20px] bg-white p-5 shadow-[0_8px_40px_rgba(0,0,0,0.12)] border border-slate-200"
               >
                 {/* Gold light sweeps */}
                 <div className="absolute top-0 right-0 h-1.5 w-16 bg-gradient-to-l from-[#D4AF37] to-transparent" />
@@ -632,7 +623,7 @@ function HomePage() {
                 </div>
                 <div className="mt-4 border-t border-slate-100 pt-3.5 flex justify-between items-baseline">
                   <div>
-                    <div className="text-[17px] font-black text-white">₹1.2 Cr+</div>
+                    <div className="text-[17px] font-black text-[#D4AF37]">₹1.2 Cr+</div>
                     <div className="text-[10px] text-slate-500 mt-0.5">2, 3 & 4 BHK Apartments</div>
                   </div>
                   <span className="flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[9px] font-bold text-emerald-400">
@@ -647,7 +638,7 @@ function HomePage() {
               <motion.div 
                 animate={{ y: [0, 10, 0] }}
                 transition={{ y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 } }}
-                className="relative w-[260px] overflow-hidden rounded-[20px] bg-slate-50/85 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] backdrop-blur-xl border border-[#D4AF37]/20"
+                className="relative w-[260px] overflow-hidden rounded-[20px] bg-white p-5 shadow-[0_8px_40px_rgba(212,175,55,0.15)] border border-[#D4AF37]/30"
               >
                 <div className="absolute top-0 right-0 h-1.5 w-16 bg-gradient-to-l from-emerald-500 to-transparent" />
                 <div className="flex items-start justify-between gap-2.5">
@@ -660,7 +651,7 @@ function HomePage() {
                 </div>
                 <div className="mt-4 border-t border-slate-100 pt-3.5 flex justify-between items-baseline">
                   <div>
-                    <div className="text-[17px] font-black text-white">₹1.55 Cr+</div>
+                    <div className="text-[17px] font-black text-[#D4AF37]">₹1.55 Cr+</div>
                     <div className="text-[10px] text-slate-500 mt-0.5">Greek-themed Villas & Apts</div>
                   </div>
                   <span className="flex items-center gap-1 rounded-full bg-[#D4AF37]/15 px-2 py-0.5 text-[9px] font-bold text-[#D4AF37]">
