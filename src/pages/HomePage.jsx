@@ -581,24 +581,36 @@ function HomePage() {
           onMouseMove={handleMouseMove}
           className="relative flex min-h-[95vh] flex-col justify-center overflow-hidden border-b border-[#D4AF37]/10"
         >
-          {/* Background — Light luxury gradient with animated orbs */}
-          <div className="absolute inset-0 z-0 h-full w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-amber-50/30">
-            {/* Animated gold orb 1 */}
+          {/* Background — Cinematic luxury video */}
+          <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80"
+              className="h-full w-full object-cover scale-[1.04]"
+              style={{ objectPosition: 'center 40%' }}
+            >
+              <source src="https://cdn.pixabay.com/video/2025/02/16/258708_large.mp4" type="video/mp4" />
+              <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            </video>
+            {/* Cinematic dark gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#05080f]/65 via-[#05080f]/45 to-[#05080f]/80" />
+            {/* Left vignette for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/70 via-[#05080f]/20 to-transparent" />
+            {/* Gold radial shimmer — top left */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_-10%_-10%,rgba(212,175,55,0.14)_0%,transparent_70%)] pointer-events-none" />
+            {/* Subtle animated gold particles */}
             <motion.div
-              style={{ x: ambientGlowX, y: ambientGlowY }}
-              className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#D4AF37] opacity-[0.07] blur-[130px] pointer-events-none"
+              animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.08, 1] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute right-[8%] top-[15%] h-[300px] w-[300px] rounded-full bg-[#D4AF37] opacity-[0.06] blur-[100px] pointer-events-none"
             />
-            {/* Animated gold orb 2 */}
-            <motion.div
-              style={{ x: card2X, y: card2Y }}
-              className="absolute right-[5%] bottom-[10%] h-[400px] w-[400px] rounded-full bg-amber-300 opacity-[0.08] blur-[120px] pointer-events-none"
-            />
-            {/* Subtle diagonal lines */}
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(212,175,55,0.04) 40px, rgba(212,175,55,0.04) 41px)'}} />
           </div>
 
-          {/* Blueprint Grid Overlay */}
-          <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
+          {/* Subtle grid overlay for depth */}
+          <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
           {/* 3D PARALLAX FLOATING CARDS (Desktop only, responsive, hardware accelerated) */}
           <div className="pointer-events-none absolute right-[4%] top-[12%] z-20 hidden flex-col gap-6 lg:flex xl:right-[6%]">
@@ -696,7 +708,7 @@ function HomePage() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex justify-center lg:justify-start"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-white/55 px-5 py-2 text-[12.5px] font-semibold text-slate-800 shadow-md backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-5 py-2 text-[12.5px] font-semibold text-[#D4AF37] shadow-md backdrop-blur-md">
                 ⭐ Trusted by 500+ Luxury Home Buyers in Bangalore
               </span>
             </motion.div>
@@ -706,8 +718,8 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="mt-6 text-center text-[38px] font-bold leading-[1.12] tracking-tight text-slate-900 sm:text-[58px] lg:text-left font-luxury-sans"
-              style={{ textShadow: '0 4px 30px rgba(0,0,0,0.6)' }}
+              className="mt-6 text-center text-[38px] font-bold leading-[1.12] tracking-tight text-white sm:text-[58px] lg:text-left font-luxury-sans"
+              style={{ textShadow: '0 4px 40px rgba(0,0,0,0.8)' }}
             >
               Discover Luxury Living <br className="hidden sm:inline" />
               <span className="font-luxury-serif italic text-gold-gradient font-medium">Beyond Imagination</span>
@@ -718,7 +730,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-              className="mt-6 max-w-[620px] text-center text-[15.5px] leading-8 text-slate-700 sm:text-[17px] lg:text-left"
+              className="mt-6 max-w-[620px] text-center text-[15.5px] leading-8 text-white/75 sm:text-[17px] lg:text-left"
             >
               An elite, handpicked portfolio of ultra-premium apartments and modern estates crafted for individuals with refined taste. RERA registered & fully verified.
             </motion.p>
@@ -742,12 +754,12 @@ function HomePage() {
                   }}
                   className={`flex items-center gap-3 rounded-[18px] border px-4 py-4 text-left backdrop-blur-sm transition duration-300 ${
                     activeCategory === item.key
-                      ? 'border-[#D4AF37] bg-slate-200 shadow-md ring-1 ring-[#D4AF37]/30'
-                      : 'border-slate-200 bg-white/30 hover:border-slate-300 hover:bg-slate-50/50'
+                      ? 'border-[#D4AF37] bg-[#D4AF37]/15 shadow-[0_0_20px_rgba(212,175,55,0.2)] ring-1 ring-[#D4AF37]/30'
+                      : 'border-white/15 bg-white/10 hover:border-white/30 hover:bg-white/15'
                   }`}
                 >
                   <span className="text-2xl">{item.icon}</span>
-                  <span className="text-[13px] font-bold leading-5 text-slate-800">{item.title}</span>
+                  <span className="text-[13px] font-bold leading-5 text-white/90">{item.title}</span>
                 </button>
               ))}
             </motion.div>
@@ -940,24 +952,4 @@ function HomePage() {
               {[
                 { icon: '🏢', stat: '20', label: 'Curated Projects' },
                 { icon: '🏗️', stat: '7+', label: 'Top Builders' },
-                { icon: '📍', stat: '10+', label: 'Prime Localities' },
-                { icon: '🏆', stat: 'RERA', label: 'Authorised Agency' },
-              ].map((item) => (
-                <div key={item.label} className="flex flex-col items-center gap-2">
-                  <div className="text-4xl">{item.icon}</div>
-                  <div className="text-[30px] font-black text-slate-900 mt-2">{item.stat}</div>
-                  <div className="text-[13px] font-bold text-slate-600 uppercase tracking-widest">{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <FloatingWidgets />
-      <AppFooter />
-    </div>
-  )
-}
-
-export default HomePage
+                { icon: '�
