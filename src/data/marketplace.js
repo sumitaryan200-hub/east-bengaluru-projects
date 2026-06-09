@@ -61,10 +61,12 @@ export const projects = [
     priceLabel: '₹2.3 Cr onwards',
     priceValue: 2.3,
     images: [
-      'https://www.sobha.com/wp-content/uploads/2023/09/neopolis-featured.jpg',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80',
+      '/projects/sobha-neopolis/photos/Elevation-A-Sobha-Neopolis.jpg',
+      '/projects/sobha-neopolis/photos/Elevation-B-Sobha-Neopolis.jpg',
+      '/projects/sobha-neopolis/photos/Elevation-C-Sobha-Neopolis.webp',
+      '/projects/sobha-neopolis/photos/Entrance-Sobha-Neopolis.jpg',
+      '/projects/sobha-neopolis/photos/Plaza-Sobha-Neopolis.jpg',
+      '/projects/sobha-neopolis/photos/Santorini-Club-Sobha-Neopolis.jpg',
     ],
     status: 'Under Construction',
     configurations: [
@@ -97,8 +99,12 @@ export const projects = [
       { icon: '🏥', label: 'Hospital', value: 'Manipal Hospital – 5 min' },
     ],
     floorPlans: [
-      { type: '1 BHK', area: '1611 Sq.ft', price: '₹2.3 Cr', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
-      { type: '3 BHK', area: '2000 Sq.ft', price: '₹3.5 Cr', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
+      { type: '1 BHK', area: '660 Sq.ft', price: '₹2.3 Cr', image: '/projects/sobha-neopolis/floorplans/1BHK-660-Sobha-Neopolis.webp' },
+      { type: '3 BHK', area: '1611 Sq.ft', price: '₹3.5 Cr', image: '/projects/sobha-neopolis/floorplans/3BHK3T-1611-Sobha-Neopolis.webp' },
+      { type: '3 BHK Premium', area: '1915 Sq.ft', price: '₹4.2 Cr', image: '/projects/sobha-neopolis/floorplans/3BHK3T-1915-Sobha-Neopolis.webp' },
+      { type: '4 BHK', area: '2481 Sq.ft', price: '₹5.5 Cr', image: '/projects/sobha-neopolis/floorplans/4BHK4T-2481-Sobha-Neopolis.webp' },
+      { type: 'Master Plan', area: 'Full Site', price: '', image: '/projects/sobha-neopolis/floorplans/Master-Plan-Sobha-Neopolis.webp' },
+      { type: 'Complete Master Plan', area: 'Full Site', price: '', image: '/projects/sobha-neopolis/floorplans/Complete-Master-Plan-Sobha-Neopolis.webp' },
     ],
     faqs: [
       { q: 'Where is Sobha Neopolis located?', a: 'Panathur Road, off Marathahalli ORR, East Bangalore — close to Whitefield and major IT corridors.' },
@@ -118,9 +124,9 @@ export const projects = [
     priceLabel: '₹8.5 Cr onwards',
     priceValue: 8.5,
     images: [
-      'https://www.luxuryresidences.in/new-assest/images/sobha-crystal-meadows/sobha-crystal-meadows-banner.webp',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      '/projects/sobha-crystal-meadows/photos/SCM-Desktop_balcony.webp',
+      '/projects/sobha-crystal-meadows/photos/exterior.jpg',
+      '/projects/sobha-crystal-meadows/photos/aerial-view.avif',
     ],
     status: 'Under Construction',
     configurations: [
@@ -151,7 +157,11 @@ export const projects = [
       { icon: '🏥', label: 'Hospital', value: 'Narayana Health – 10 min' },
     ],
     floorPlans: [
-      { type: '4 BHK Triplex', area: '4284 Sq.ft', price: '₹8.5 Cr', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
+      { type: '4 BHK Row House A1', area: '4284 Sq.ft', price: '₹8.5 Cr', image: '/projects/sobha-crystal-meadows/floorplans/4BHK-Row-House-A1-Sobha-Crystal-Meadows-Row-House-Villa-Mullur.webp' },
+      { type: '4 BHK Row House A4', area: '4284 Sq.ft', price: '₹8.5 Cr', image: '/projects/sobha-crystal-meadows/floorplans/4BHK-Row-House-A4-Sobha-Crystal-Meadows-Row-House-Villa-Mullur.webp' },
+      { type: '4.5 BHK Row House B1', area: '4800 Sq.ft', price: '₹9.5 Cr', image: '/projects/sobha-crystal-meadows/floorplans/4.5BHK-Row-House-B1-Sobha-Crystal-Meadows-Row-House-Villa-Mullur.webp' },
+      { type: '4.5 BHK Row House B5', area: '4800 Sq.ft', price: '₹9.5 Cr', image: '/projects/sobha-crystal-meadows/floorplans/4.5BHK-Row-House-B5-Sobha-Crystal-Meadows-Row-House-Villa-Mullur.webp' },
+      { type: 'Master Plan', area: 'Full Site', price: '', image: '/projects/sobha-crystal-meadows/floorplans/Master-Plan-Sobha-Crystal-Meadows-Row-House-Villa-Mullur.webp' },
     ],
     faqs: [
       { q: 'What type of homes are in Sobha Crystal Meadows?', a: '4 BHK Triplex Row House Villas with G+3 configuration, approx 4,284 sq.ft each.' },
