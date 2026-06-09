@@ -760,8 +760,8 @@ function HomePage() {
           <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-slate-100 bg-white/70 backdrop-blur-md">
             <div className="mx-auto flex max-w-[1380px] flex-wrap items-center justify-center gap-y-2 px-4 py-4 sm:px-6 lg:px-8">
               {[
-                { label: '99+ Projects', subtitle: 'Verified Listings' },
-                { label: '25+ Builders', subtitle: 'Premium Developers' },
+                { label: '20 Curated Projects', subtitle: 'Verified Listings' },
+                { label: '7+ Top Builders', subtitle: 'Premium Developers' },
                 { label: 'RERA Certified', subtitle: 'Guaranteed Trust' },
                 { label: 'East Bangalore Specialist', subtitle: 'Local Authority' },
               ].map(({ label, subtitle }, i, arr) => (
@@ -938,9 +938,9 @@ function HomePage() {
           <div className="mx-auto max-w-[1380px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { icon: '🏢', stat: '99+', label: 'Premium Listings' },
-                { icon: '🏗️', stat: '25+', label: 'Elite Builders' },
-                { icon: '📍', stat: '22', label: 'Prime Localities' },
+                { icon: '🏢', stat: '20', label: 'Curated Projects' },
+                { icon: '🏗️', stat: '7+', label: 'Top Builders' },
+                { icon: '📍', stat: '10+', label: 'Prime Localities' },
                 { icon: '🏆', stat: 'RERA', label: 'Authorised Agency' },
               ].map((item) => (
                 <div key={item.label} className="flex flex-col items-center gap-2">
