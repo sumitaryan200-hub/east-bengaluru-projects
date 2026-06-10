@@ -116,7 +116,7 @@ function HeroSearch() {
                     <button
                       key={i}
                       onClick={() => {
-                        if (item.slug) navigate(`/${item.slug}/eastproject.in`)
+                        if (item.slug) navigate(`/${item.slug}`)
                         else navigate('/residential-properties-in-bangalore')
                         setFocused(false)
                         setQuery('')
@@ -397,7 +397,7 @@ function PropertyCard({ project }) {
         <div className="mt-6 flex gap-2 pt-2">
           {/* View Details CTA */}
           <Link
-            to={`/${project.slug}/eastproject.in`}
+            to={`/${project.slug}`}
             className="flex h-[46px] flex-1 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-[12px] font-bold text-slate-800 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
           >
             View Details
@@ -581,23 +581,23 @@ function HomePage() {
           onMouseMove={handleMouseMove}
           className="relative flex min-h-[95vh] flex-col justify-center overflow-hidden border-b border-[#D4AF37]/10"
         >
-          {/* Background — Full-screen luxury photo with Ken Burns zoom */}
+          {/* Background — Self-hosted luxury video */}
           <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
 
-            {/* REAL PHOTO — Ken Burns slow zoom */}
-            <motion.img
-              src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=85"
-              alt=""
-              aria-hidden="true"
+            {/* VIDEO — luxury building + pool */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className="absolute inset-0 h-full w-full object-cover object-center"
-              initial={{ scale: 1.08 }}
-              animate={{ scale: 1.0 }}
-              transition={{ duration: 12, ease: 'easeOut' }}
-              loading="eager"
-            />
+              poster="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=80"
+            >
+              <source src="/hero-luxury.mp4" type="video/mp4" />
+            </video>
 
-            {/* Dark overlay — top to bottom */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70 pointer-events-none" />
+            {/* Dark overlay — stronger at top for nav visibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/30 to-black/70 pointer-events-none" />
             {/* Left vignette — text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent pointer-events-none" />
             {/* Subtle gold shimmer top-left */}
@@ -920,7 +920,7 @@ function HomePage() {
 
               <StaggerReveal className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {recent.map((p) => (
-                  <Link key={p.slug} to={`/${p.slug}/eastproject.in`} className="group overflow-hidden rounded-[20px] border border-slate-200 bg-white transition duration-300 hover:border-[#D4AF37]/35">
+                  <Link key={p.slug} to={`/${p.slug}`} className="group overflow-hidden rounded-[20px] border border-slate-200 bg-white transition duration-300 hover:border-[#D4AF37]/35">
                     <div className="overflow-hidden">
                       <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                     </div>
