@@ -232,9 +232,11 @@ export const projects = [
     priceLabel: '₹1.54 Cr onwards',
     priceValue: 1.54,
     images: [
-      'https://manadale.ebrochures.co.in/wp-content/uploads/2025/10/Main-Elevation-Mana-Dale-Sarjapur.jpg',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=800&q=80',
+      '/projects/mana-dale/photos/Main-Elevation-Mana-Dale-Sarjapur.jpg',
+      '/projects/mana-dale/photos/Mana-Dale-img1.webp',
+      '/projects/mana-dale/photos/Mana-Dale-img2.webp',
+      '/projects/mana-dale/photos/Mana-Dale-img3.webp',
+      '/projects/mana-dale/photos/Mana-Dale-img4.jpg',
     ],
     status: 'New Launch',
     configurations: [
@@ -266,8 +268,9 @@ export const projects = [
       { icon: '🏥', label: 'Hospital', value: 'Narayana Health – 10 min' },
     ],
     floorPlans: [
-      { type: '3 BHK', area: '1482 Sq.ft', price: '₹1.54 Cr', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
-      { type: '4 BHK', area: '2145 Sq.ft', price: '₹2.37 Cr', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
+      { type: '3 BHK', area: '1590 Sq.ft', price: '₹1.54 Cr', image: '/projects/mana-dale/floorplans/3BHK3T-1590-Mana-Dale-Sarjapur.webp' },
+      { type: '4 BHK', area: '2145 Sq.ft', price: '₹2.37 Cr', image: '/projects/mana-dale/floorplans/4BHK4T-2145-Mana-Dale-Sarjapur.webp' },
+      { type: 'Master Plan', area: 'Full Site', price: '', image: '/projects/mana-dale/floorplans/Master-Plan-Mana-Sarjapur-Orchards.jpg' },
     ],
     faqs: [
       { q: 'Where is Mana Dale located?', a: 'Kodathi, off Sarjapur Road, East Bangalore.' },
@@ -286,9 +289,11 @@ export const projects = [
     priceLabel: '₹60 L onwards',
     priceValue: 0.6,
     images: [
-      'https://www.homznspace.com/wp-content/uploads/2021/07/Elevation-B-Mana-Capitol-Sarjapur.jpg',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=800&q=80',
+      '/projects/mana-capitol/photos/Elevation-A-Mana-Capitol-Sarjapur.jpg',
+      '/projects/mana-capitol/photos/Elevation-C-Mana-Capitol-Sarjapur.jpg',
+      '/projects/mana-capitol/photos/Elevation-D-Mana-Capitol-Sarjapur.jpg',
+      '/projects/mana-capitol/photos/Entrance-View-Mana-Capitol-Sarjapur.jpg',
+      '/projects/mana-capitol/photos/Pool-View-Mana-Capitol-Sarjapur.jpg',
     ],
     status: 'Under Construction',
     configurations: [
@@ -320,7 +325,10 @@ export const projects = [
       { icon: '🏫', label: 'School', value: 'Orchids International – 8 min' },
     ],
     floorPlans: [
-      { type: '2 BHK', area: '1097 Sq.ft', price: '₹90 L', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
+      { type: '1 BHK', area: '699 Sq.ft', price: '₹60 L', image: '/projects/mana-capitol/floorplans/1-BHK-Mana-Capitol-Sarjapur.jpg' },
+      { type: '2 BHK', area: '1061–1135 Sq.ft', price: '₹87 L', image: '/projects/mana-capitol/floorplans/2-BHK-Mana-Capitol-Sarjapur.jpg' },
+      { type: '3 BHK', area: '1447–1558 Sq.ft', price: '₹1.18 Cr', image: '/projects/mana-capitol/floorplans/3-BHK-Mana-Capitol-Sarjapur.jpg' },
+      { type: 'Master Plan', area: 'Full Site', price: '', image: '/projects/mana-capitol/floorplans/Master-Plan-Mana-Capitol-Sarjapur.jpg' },
     ],
     faqs: [
       { q: 'When is possession for Mana Capitol?', a: 'Expected possession September 2026.' },
@@ -339,9 +347,10 @@ export const projects = [
     priceLabel: '₹2.52 Cr onwards',
     priceValue: 2.52,
     images: [
-      'https://www.homznspace.com/wp-content/uploads/2026/05/main-elevation-mana-verdant-terraces.webp',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80',
+      '/projects/mana-verdant-terraces/photos/main-elevation-mana-verdant-terraces.webp',
+      '/projects/mana-verdant-terraces/photos/g1.jpg',
+      '/projects/mana-verdant-terraces/photos/g2.jpg',
+      '/projects/mana-verdant-terraces/photos/g3.jpg',
     ],
     status: 'New Launch',
     configurations: [
@@ -373,9 +382,8 @@ export const projects = [
       { icon: '🏫', label: 'School', value: 'Ekya Schools – 8 min' },
       { icon: '🏥', label: 'Hospital', value: 'Manipal Hospital – 12 min' },
     ],
-    floorPlans: [
-      { type: '3 BHK', area: '1910 Sq.ft', price: '₹2.52 Cr', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80' },
-    ],
+    floorPlans: [],
+    floorPlanOnRequest: true,
     faqs: [
       { q: 'What makes Mana Verdant Terraces special?', a: 'Oversized apartments starting at 1,910 sq.ft, XXL balconies, 36,000 sq.ft clubhouse, and 70+ amenities.' },
       { q: 'What is the starting price?', a: '₹2.52 Cr for 3 BHK.' },

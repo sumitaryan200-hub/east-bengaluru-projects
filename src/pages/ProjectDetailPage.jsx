@@ -440,26 +440,56 @@ function ProjectDetailPage() {
                 <div className="mt-6 overflow-hidden rounded-[24px] border border-slate-200 bg-slate-50 p-6.5 shadow-[0_20px_50px_rgba(0,0,0,0.65)] hover:border-[#D4AF37]/30 transition-all duration-300">
                   <h2 className="text-[20px] font-luxury-serif font-black tracking-widest text-[#D4AF37] uppercase">Floor Plans</h2>
                   <div className="h-[2px] w-14 bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] mb-5" />
-                  <div className="flex flex-wrap gap-2.5 mb-5.5">
-                    {project.floorPlans?.map((fp, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setActiveFloorPlan(i)}
-                        className="rounded-full px-5 py-2.5 text-[12px] font-bold transition cursor-pointer border"
-                        style={activeFloorPlan === i ? { background: 'linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%)', color: '#080B11', borderColor: 'transparent', fontWeight: '900' } : { borderColor: 'rgba(255,255,255,0.1)', color: '#94a3b8', backgroundColor: '#080B11' }}
+
+                  {/* Floor plan on request */}
+                  {project.floorPlanOnRequest ? (
+                    <div className="flex flex-col items-center justify-center gap-4 rounded-[16px] border-2 border-dashed border-[#D4AF37]/30 bg-white py-12 px-6 text-center">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#D4AF37]/10">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-[#D4AF37]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                      </div>
+                      <div>
+                        <p className="text-[16px] font-bold text-slate-800">Floor Plan Available on Request</p>
+                        <p className="mt-1 text-[13px] text-slate-500">Contact us to receive detailed floor plans for this project.</p>
+                      </div>
+                      <a
+                        href={`https://wa.me/918102422651?text=Hi%2C%20I%20would%20like%20to%20request%20the%20floor%20plan%20for%20*${encodeURIComponent(project.name)}*.%0A%0AKindly%20share%20at%20your%20earliest%20convenience.%20Thank%20you!`}
+                        target="_blank" rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-2.5 text-[13px] font-bold text-white shadow transition hover:bg-[#1ebe5d]"
                       >
-                        {fp.type} · {fp.area}
-                      </button>
-                    ))}
-                  </div>
-                  {project.floorPlans?.[activeFloorPlan] && (
-                    <div className="overflow-hidden rounded-[16px] border border-slate-100 bg-white p-4 shadow-inner relative group">
-                      <img
-                        src={project.floorPlans[activeFloorPlan].image}
-                        alt={`${project.floorPlans[activeFloorPlan].type} floor plan`}
-                        className="w-full max-h-[400px] object-contain transition duration-500 group-hover:scale-[1.01]"
-                      />
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.659 1.438 5.168L2.034 22l4.974-1.385A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" fillRule="evenodd" clipRule="evenodd"/></svg>
+                        Request Floor Plan
+                      </a>
                     </div>
+                  ) : (
+                    <>
+                      <div className="flex flex-wrap gap-2.5 mb-5">
+                        {project.floorPlans?.map((fp, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setActiveFloorPlan(i)}
+                            className="rounded-full px-5 py-2.5 text-[12px] font-bold transition cursor-pointer border"
+                            style={activeFloorPlan === i ? { background: 'linear-gradient(135deg, #D4AF37 0%, #AA7C11 100%)', color: '#080B11', borderColor: 'transparent', fontWeight: '900' } : { borderColor: 'rgba(212,175,55,0.2)', color: '#64748b', backgroundColor: 'white' }}
+                          >
+                            {fp.type}{fp.area && fp.area !== 'Full Site' ? ` · ${fp.area}` : ''}
+                          </button>
+                        ))}
+                      </div>
+                      {project.floorPlans?.[activeFloorPlan] && (
+                        <div className="overflow-hidden rounded-[16px] border border-slate-200 bg-white p-4 shadow-inner relative group">
+                          <img
+                            src={project.floorPlans[activeFloorPlan].image}
+                            alt={`${project.floorPlans[activeFloorPlan].type} floor plan`}
+                            className="w-full max-h-[480px] object-contain transition duration-500 group-hover:scale-[1.01]"
+                          />
+                          {project.floorPlans[activeFloorPlan].price && (
+                            <div className="mt-3 flex items-center justify-between px-1">
+                              <span className="text-[13px] font-bold text-slate-600">{project.floorPlans[activeFloorPlan].type}</span>
+                              <span className="text-[14px] font-black text-[#D4AF37]">{project.floorPlans[activeFloorPlan].price}</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </ScrollReveal>
