@@ -116,7 +116,7 @@ function HeroSearch() {
                     <button
                       key={i}
                       onClick={() => {
-                        if (item.slug) navigate(`/${item.slug}-eastproject`)
+                        if (item.slug) navigate(`/${item.slug}/eastproject.in`)
                         else navigate('/residential-properties-in-bangalore')
                         setFocused(false)
                         setQuery('')
@@ -397,7 +397,7 @@ function PropertyCard({ project }) {
         <div className="mt-6 flex gap-2 pt-2">
           {/* View Details CTA */}
           <Link
-            to={`/${project.slug}-eastproject`}
+            to={`/${project.slug}/eastproject.in`}
             className="flex h-[46px] flex-1 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-[12px] font-bold text-slate-800 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
           >
             View Details
@@ -920,7 +920,7 @@ function HomePage() {
 
               <StaggerReveal className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {recent.map((p) => (
-                  <Link key={p.slug} to={`/${p.slug}-eastproject`} className="group overflow-hidden rounded-[20px] border border-slate-200 bg-white transition duration-300 hover:border-[#D4AF37]/35">
+                  <Link key={p.slug} to={`/${p.slug}/eastproject.in`} className="group overflow-hidden rounded-[20px] border border-slate-200 bg-white transition duration-300 hover:border-[#D4AF37]/35">
                     <div className="overflow-hidden">
                       <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                     </div>

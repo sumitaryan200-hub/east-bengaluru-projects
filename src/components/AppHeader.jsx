@@ -5,7 +5,7 @@ import { bangaloreLocalities, topLocalities } from '../data/marketplace'
 
 function AppHeader({ builderLogo, builderName, builderColor }) {
   const location = useLocation()
-  const isDetailPage = location.pathname.endsWith('-eastproject')
+  const isDetailPage = location.pathname.endsWith('/eastproject.in')
   const [mobileOpen, setMobileOpen] = useState(false)
   const [localityOpen, setLocalityOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)

@@ -17,8 +17,8 @@ function App() {
           <Route path="/residential-properties-in-bangalore" element={<ListingPage />} />
           <Route path="/builders/:slug" element={<BuilderPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          {/* SEO-friendly project URLs: /sobha-neopolis-eastproject */}
-          <Route path="/:projectSlug" element={<ProjectDetailPage />} />
+          {/* SEO-friendly project URLs: /sobha-neopolis/eastproject.in */}
+          <Route path="/:projectSlug/eastproject.in" element={<ProjectDetailPage />} />
         </Routes>
       </SmoothScroll>
     </BrowserRouter>

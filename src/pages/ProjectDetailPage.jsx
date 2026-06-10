@@ -1,7 +1,7 @@
 import { ChevronDown, ChevronLeft, ChevronRight, Heart, MapPin, Phone, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import AppFooter from '../components/AppFooter'
 import FloatingWidgets from '../components/FloatingWidgets'
 import ScrollReveal from '../components/ScrollReveal'
@@ -212,12 +212,7 @@ function Gallery({ images, projectName }) {
 // ── Project Detail Page ──────────────────────────────────────────────────────
 function ProjectDetailPage() {
   const { projectSlug } = useParams()
-  const navigate = useNavigate()
-  // Support both new format (sobha-neopolis-eastproject) and old (/project/sobha-neopolis)
-  const slug = projectSlug?.endsWith('-eastproject')
-    ? projectSlug.slice(0, -'-eastproject'.length)
-    : projectSlug
-  const project = projects.find((p) => p.slug === slug)
+  const project = projects.find((p) => p.slug === projectSlug)
   const [activeFloorPlan, setActiveFloorPlan] = useState(0)
   const [openFaq, setOpenFaq] = useState(null)
 
@@ -584,7 +579,7 @@ function ProjectDetailPage() {
                     </h2>
                     <StaggerReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {allRelated.map((p) => (
-                        <Link key={p.slug} to={`/${p.slug}-eastproject`} className="group overflow-hidden rounded-[18px] border border-slate-100 bg-white transition duration-300 hover:border-[#D4AF37]/35 hover:shadow-lg h-full flex flex-col justify-between">
+                        <Link key={p.slug} to={`/${p.slug}/eastproject.in`} className="group overflow-hidden rounded-[18px] border border-slate-100 bg-white transition duration-300 hover:border-[#D4AF37]/35 hover:shadow-lg h-full flex flex-col justify-between">
                           <div className="overflow-hidden relative">
                             <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />

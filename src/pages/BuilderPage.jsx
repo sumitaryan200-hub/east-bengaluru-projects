@@ -147,7 +147,7 @@ function BuilderPage() {
                     </div>
                     <div className="mt-5 flex gap-3">
                       <Link
-                        to={`/${p.slug}-eastproject`}
+                        to={`/${p.slug}/eastproject.in`}
                         className="flex h-[40px] flex-1 items-center justify-center rounded-[10px] text-[13px] font-semibold text-white transition hover:opacity-90"
                         style={{ backgroundColor: primary }}
                       >
