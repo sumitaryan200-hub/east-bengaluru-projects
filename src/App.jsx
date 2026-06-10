@@ -15,9 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/residential-properties-in-bangalore" element={<ListingPage />} />
-          <Route path="/project/:slug" element={<ProjectDetailPage />} />
           <Route path="/builders/:slug" element={<BuilderPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          {/* SEO-friendly project URLs: /sobha-neopolis-eastproject */}
+          <Route path="/:projectSlug" element={<ProjectDetailPage />} />
         </Routes>
       </SmoothScroll>
     </BrowserRouter>
