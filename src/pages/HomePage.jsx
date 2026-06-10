@@ -581,179 +581,28 @@ function HomePage() {
           onMouseMove={handleMouseMove}
           className="relative flex min-h-[95vh] flex-col justify-center overflow-hidden border-b border-[#D4AF37]/10"
         >
-          {/* Background — Premium CSS animated building + pool + sky */}
+          {/* Background — Full-screen luxury photo with Ken Burns zoom */}
           <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
 
-            {/* Deep blue sky base */}
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #020c1b 0%, #041628 18%, #082040 42%, #0b2a52 62%, #0d2e5a 75%, #080B11 100%)' }} />
-
-            {/* Animated aurora — deep blue glow at sky top */}
-            <motion.div
-              animate={{ opacity: [0.5, 1, 0.5], scale: [1, 1.06, 1] }}
-              transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute pointer-events-none"
-              style={{ top: '-5%', left: '-10%', right: '-10%', height: '55%', background: 'radial-gradient(ellipse 75% 65% at 50% 0%, rgba(18,80,200,0.5) 0%, rgba(10,40,120,0.2) 50%, transparent 75%)' }}
+            {/* REAL PHOTO — Ken Burns slow zoom */}
+            <motion.img
+              src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=85"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              initial={{ scale: 1.08 }}
+              animate={{ scale: 1.0 }}
+              transition={{ duration: 12, ease: 'easeOut' }}
+              loading="eager"
             />
 
-            {/* Moon glow — top right */}
-            <motion.div
-              animate={{ opacity: [0.4, 0.75, 0.4] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute pointer-events-none"
-              style={{ top: '6%', right: '18%', width: 180, height: 180, background: 'radial-gradient(circle, rgba(220,235,255,0.18) 0%, rgba(180,210,255,0.08) 40%, transparent 70%)', borderRadius: '50%' }}
-            />
-            <div className="absolute pointer-events-none" style={{ top: '8%', right: '20%', width: 60, height: 60, background: 'radial-gradient(circle, rgba(230,240,255,0.55) 0%, rgba(200,220,255,0.2) 40%, transparent 70%)', borderRadius: '50%' }} />
-
-            {/* Stars */}
-            {[
-              [8,4],[17,9],[27,3],[38,11],[49,6],[61,2],[72,8],[83,5],[91,12],[4,18],
-              [14,22],[23,15],[35,19],[46,25],[57,14],[68,20],[79,17],[88,23],[95,7],[3,30],
-              [12,35],[24,28],[33,33],[44,38],[55,31],[66,36],[77,29],[86,34],[94,40],[7,45],
-              [19,42],[29,47],[41,43],[52,48],[63,44],[74,50],[85,46],[96,41],[10,52],[30,55],
-            ].map(([x, y], i) => (
-              <motion.div
-                key={`star-${i}`}
-                animate={{ opacity: [0.1, i % 4 === 0 ? 0.95 : i % 3 === 0 ? 0.7 : 0.5, 0.1] }}
-                transition={{ duration: 2 + (i % 3), repeat: Infinity, delay: (i * 0.25) % 5, ease: 'easeInOut' }}
-                className="absolute rounded-full bg-white pointer-events-none"
-                style={{ width: i % 5 === 0 ? 2 : 1, height: i % 5 === 0 ? 2 : 1, top: `${y}%`, left: `${x}%` }}
-              />
-            ))}
-
-            {/* Building silhouette — luxury high-rises with lit windows */}
-            <svg className="absolute bottom-0 left-0 w-full pointer-events-none" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="bldGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#0a1828" />
-                  <stop offset="100%" stopColor="#040810" />
-                </linearGradient>
-                <linearGradient id="poolGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="rgba(10,40,100,0)" />
-                  <stop offset="20%" stopColor="rgba(20,80,180,0.25)" />
-                  <stop offset="50%" stopColor="rgba(30,120,220,0.35)" />
-                  <stop offset="80%" stopColor="rgba(20,80,180,0.25)" />
-                  <stop offset="100%" stopColor="rgba(10,40,100,0)" />
-                </linearGradient>
-              </defs>
-
-              {/* Far background towers */}
-              <rect x="0"    y="240" width="70"  height="180" fill="url(#bldGrad)" rx="1" opacity="0.7" />
-              <rect x="65"   y="200" width="90"  height="220" fill="url(#bldGrad)" rx="1" opacity="0.75" />
-              <rect x="150"  y="220" width="60"  height="200" fill="url(#bldGrad)" rx="1" opacity="0.7" />
-              <rect x="1200" y="230" width="80"  height="190" fill="url(#bldGrad)" rx="1" opacity="0.7" />
-              <rect x="1275" y="195" width="100" height="225" fill="url(#bldGrad)" rx="1" opacity="0.75" />
-              <rect x="1370" y="220" width="70"  height="200" fill="url(#bldGrad)" rx="1" opacity="0.7" />
-
-              {/* Mid buildings */}
-              <rect x="205" y="170" width="110" height="250" fill="url(#bldGrad)" rx="2" opacity="0.85" />
-              <rect x="310" y="190" width="85"  height="230" fill="url(#bldGrad)" rx="2" opacity="0.85" />
-              <rect x="990" y="175" width="105" height="245" fill="url(#bldGrad)" rx="2" opacity="0.85" />
-              <rect x="1090" y="160" width="115" height="260" fill="url(#bldGrad)" rx="2" opacity="0.85" />
-
-              {/* Main towers — left cluster */}
-              <rect x="370" y="90"  width="130" height="330" fill="url(#bldGrad)" rx="2" />
-              <rect x="495" y="130" width="100" height="290" fill="url(#bldGrad)" rx="2" />
-              {/* Penthouse top */}
-              <rect x="385" y="75"  width="100" height="20"  fill="url(#bldGrad)" rx="1" />
-              <rect x="415" y="60"  width="40"  height="18"  fill="url(#bldGrad)" rx="1" />
-
-              {/* Main towers — right cluster */}
-              <rect x="870" y="100" width="125" height="320" fill="url(#bldGrad)" rx="2" />
-              <rect x="990" y="140" width="95"  height="280" fill="url(#bldGrad)" rx="2" />
-              <rect x="885" y="84"  width="95"  height="20"  fill="url(#bldGrad)" rx="1" />
-              <rect x="912" y="68"  width="38"  height="18"  fill="url(#bldGrad)" rx="1" />
-
-              {/* Center landmark tower */}
-              <rect x="620" y="40"  width="180" height="380" fill="url(#bldGrad)" rx="3" />
-              <rect x="640" y="22"  width="140" height="22"  fill="url(#bldGrad)" rx="2" />
-              <rect x="665" y="6"   width="90"  height="18"  fill="url(#bldGrad)" rx="2" />
-              <rect x="703" y="0"   width="14"  height="8"   fill="url(#bldGrad)" />
-
-              {/* Windows — center tower (gold lit) */}
-              {[0,1,2,3,4,5,6,7,8,9,10,11,12].map(row => [0,1,2,3,4].map(col => (
-                (row + col) % 3 !== 0 &&
-                <rect key={`cw-${row}-${col}`} x={632 + col * 32} y={50 + row * 26} width={18} height={14} fill={`rgba(212,175,55,${0.25 + ((row+col)%3)*0.12})`} rx="1" />
-              )))}
-
-              {/* Windows — left tower */}
-              {[0,1,2,3,4,5,6,7,8,9].map(row => [0,1,2].map(col => (
-                (row + col) % 4 !== 0 &&
-                <rect key={`lw-${row}-${col}`} x={382 + col * 36} y={100 + row * 28} width={20} height={14} fill={`rgba(212,175,55,${0.2 + ((row*col)%3)*0.1})`} rx="1" />
-              )))}
-
-              {/* Windows — right tower */}
-              {[0,1,2,3,4,5,6,7,8,9].map(row => [0,1,2].map(col => (
-                (row + col) % 4 !== 1 &&
-                <rect key={`rw-${row}-${col}`} x={878 + col * 36} y={110 + row * 28} width={20} height={14} fill={`rgba(212,175,55,${0.2 + ((row+col+1)%3)*0.1})`} rx="1" />
-              )))}
-
-              {/* Ground level + podium */}
-              <rect x="0" y="375" width="1440" height="45" fill="#040810" />
-              <rect x="330" y="355" width="770" height="25" fill="#060d1c" rx="1" />
-
-              {/* Swimming pool */}
-              <rect x="430" y="356" width="580" height="20" fill="url(#poolGrad)" rx="2" />
-              {/* Pool lane lines */}
-              <line x1="500" y1="357" x2="500" y2="375" stroke="rgba(100,180,255,0.12)" strokeWidth="1" />
-              <line x1="580" y1="357" x2="580" y2="375" stroke="rgba(100,180,255,0.12)" strokeWidth="1" />
-              <line x1="660" y1="357" x2="660" y2="375" stroke="rgba(100,180,255,0.12)" strokeWidth="1" />
-              <line x1="740" y1="357" x2="740" y2="375" stroke="rgba(100,180,255,0.12)" strokeWidth="1" />
-              <line x1="820" y1="357" x2="820" y2="375" stroke="rgba(100,180,255,0.12)" strokeWidth="1" />
-              <line x1="900" y1="357" x2="900" y2="375" stroke="rgba(100,180,255,0.12)" strokeWidth="1" />
-            </svg>
-
-            {/* Animated pool water shimmer */}
-            <motion.div
-              animate={{ x: ['-60%', '60%'] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute pointer-events-none"
-              style={{ bottom: '0%', left: '28%', width: '45%', height: '5.5%', background: 'linear-gradient(90deg, transparent 0%, rgba(80,160,255,0.12) 30%, rgba(212,175,55,0.08) 50%, rgba(80,160,255,0.12) 70%, transparent 100%)', borderRadius: 4 }}
-            />
-            <motion.div
-              animate={{ x: ['40%', '-40%'] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-              className="absolute pointer-events-none"
-              style={{ bottom: '0.5%', left: '30%', width: '40%', height: '3%', background: 'linear-gradient(90deg, transparent, rgba(120,200,255,0.08), transparent)', borderRadius: 4 }}
-            />
-
-            {/* Gold horizon glow above buildings */}
-            <motion.div
-              animate={{ opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-              className="absolute pointer-events-none"
-              style={{ bottom: '22%', left: 0, right: 0, height: '18%', background: 'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(212,175,55,0.18) 0%, transparent 70%)' }}
-            />
-
-            {/* Floating gold bokeh particles */}
-            {[
-              [15,70,4,0],[32,65,5,1.2],[48,72,3,0.6],[63,68,6,2],[77,74,4,0.3],
-              [22,80,3,1.8],[54,78,5,0.9],[71,82,4,1.4],[85,75,3,2.5],[40,85,6,0.1],
-            ].map(([x, y, size, delay], i) => (
-              <motion.div
-                key={`bokeh-${i}`}
-                animate={{ y: [0, -55, 0], opacity: [0, 0.65, 0] }}
-                transition={{ duration: 5 + (i % 4), repeat: Infinity, delay, ease: 'easeInOut' }}
-                className="absolute rounded-full pointer-events-none"
-                style={{ width: size, height: size, left: `${x}%`, top: `${y}%`, background: 'radial-gradient(circle, rgba(212,175,55,0.9) 0%, transparent 70%)', filter: 'blur(1.5px)' }}
-              />
-            ))}
-
-            {/* Cinematic dark gradient overlay — top */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#05080f]/40 via-transparent to-[#05080f]/70 pointer-events-none" />
-            {/* Left vignette for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#05080f]/65 via-[#05080f]/15 to-transparent pointer-events-none" />
-            {/* Gold radial shimmer — top left */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_-10%_-10%,rgba(212,175,55,0.12)_0%,transparent_70%)] pointer-events-none" />
-            {/* Animated gold orb */}
-            <motion.div
-              animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.08, 1] }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute right-[8%] top-[15%] h-[300px] w-[300px] rounded-full bg-[#D4AF37] opacity-[0.06] blur-[100px] pointer-events-none"
-            />
+            {/* Dark overlay — top to bottom */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/30 to-black/70 pointer-events-none" />
+            {/* Left vignette — text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent pointer-events-none" />
+            {/* Subtle gold shimmer top-left */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_0%_0%,rgba(212,175,55,0.10)_0%,transparent_70%)] pointer-events-none" />
           </div>
-
-          {/* Subtle grid overlay for depth */}
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
           {/* 3D PARALLAX FLOATING CARDS (Desktop only, responsive, hardware accelerated) */}
           <div className="pointer-events-none absolute right-[4%] top-[12%] z-20 hidden flex-col gap-6 lg:flex xl:right-[6%]">
