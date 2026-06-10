@@ -242,7 +242,7 @@ function PropertyListCard({ project }) {
           {/* Action Row */}
           <div className="mt-5 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3 border-t border-slate-100 pt-4">
             <Link
-              to={`/${project.slug}/eastproject.in`}
+              to={`/${project.slug}`}
               className="flex h-[44px] items-center justify-center rounded-full border border-slate-200 bg-slate-100 px-6 text-[13px] font-bold text-slate-800 transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:text-[#D4AF37] cursor-pointer"
             >
               View Details
@@ -497,7 +497,7 @@ function ListingPage() {
               </div>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {recentProjects.map((p) => (
-                  <Link key={p.slug} to={`/${p.slug}/eastproject.in`} className="group overflow-hidden rounded-[14px] border border-slate-200 transition hover:shadow-md">
+                  <Link key={p.slug} to={`/${p.slug}`} className="group overflow-hidden rounded-[14px] border border-slate-200 transition hover:shadow-md">
                     <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover" />
                     <div className="p-4">
                       <div className="text-[11px] font-semibold uppercase tracking-widest text-slate-600">{p.builder}</div>

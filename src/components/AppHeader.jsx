@@ -5,7 +5,7 @@ import { bangaloreLocalities, topLocalities } from '../data/marketplace'
 
 function AppHeader({ builderLogo, builderName, builderColor }) {
   const location = useLocation()
-  const isDetailPage = location.pathname.endsWith('/eastproject.in')
+  const isDetailPage = !['/', '/residential-properties-in-bangalore', '/contact'].includes(location.pathname) && !location.pathname.startsWith('/builders/')
   const [mobileOpen, setMobileOpen] = useState(false)
   const [localityOpen, setLocalityOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -26,8 +26,10 @@ function AppHeader({ builderLogo, builderName, builderColor }) {
   const isTransparent = isHomePage && !scrolled
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-500 ${
-      isTransparent 
+    <header className={`top-0 z-50 w-full transition-all duration-500 ${
+      isHomePage ? 'fixed' : 'sticky'
+    } ${
+      isTransparent
         ? 'bg-transparent border-b border-white/20 text-white'
         : 'bg-white/95 backdrop-blur-xl border-b border-slate-200 text-slate-900 shadow-[0_4px_20px_rgba(0,0,0,0.08)]'
     }`}>

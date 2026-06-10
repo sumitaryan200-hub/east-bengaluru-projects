@@ -579,7 +579,7 @@ function ProjectDetailPage() {
                     </h2>
                     <StaggerReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       {allRelated.map((p) => (
-                        <Link key={p.slug} to={`/${p.slug}/eastproject.in`} className="group overflow-hidden rounded-[18px] border border-slate-100 bg-white transition duration-300 hover:border-[#D4AF37]/35 hover:shadow-lg h-full flex flex-col justify-between">
+                        <Link key={p.slug} to={`/${p.slug}`} className="group overflow-hidden rounded-[18px] border border-slate-100 bg-white transition duration-300 hover:border-[#D4AF37]/35 hover:shadow-lg h-full flex flex-col justify-between">
                           <div className="overflow-hidden relative">
                             <img src={p.images[0]} alt={p.name} className="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
