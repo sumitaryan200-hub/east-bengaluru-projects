@@ -474,11 +474,11 @@ function ListingPage() {
           {/* Listings */}
           <section>
             {filteredProjects.length > 0 ? (
-              <StaggerReveal className="space-y-5">
+              <div className="space-y-5">
                 {filteredProjects.map((p) => (
                   <PropertyListCard key={p.slug} project={p} />
                 ))}
-              </StaggerReveal>
+              </div>
             ) : (
               <ScrollReveal>
                 <div className="rounded-[16px] border border-slate-200 bg-white py-20 text-center">
