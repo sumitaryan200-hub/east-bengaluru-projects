@@ -85,9 +85,9 @@ function PropertyListCard({ project }) {
           : 'border-slate-200'
       }`}
     >
-      <div className="grid sm:grid-cols-[300px_1fr]">
+      <div className="flex flex-col sm:flex-row">
         {/* Left Side: Property Image */}
-        <div className="relative overflow-hidden min-h-[220px] sm:min-h-full aspect-[4/3] sm:aspect-auto">
+        <div className="relative overflow-hidden min-h-[220px] aspect-[4/3] sm:aspect-auto sm:w-[300px] sm:shrink-0">
           <motion.img 
             src={project.images[0]} 
             alt={project.name} 
@@ -168,7 +168,7 @@ function PropertyListCard({ project }) {
         </div>
 
         {/* Right Side: Property Specifications & Context */}
-        <div className="flex flex-col p-6 sm:p-7 justify-between text-left">
+        <div className="flex flex-col p-6 sm:p-7 justify-between text-left flex-1 min-w-0">
           {/* Header row */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
             <div>
@@ -464,14 +464,14 @@ function ListingPage() {
         </ScrollReveal>
 
         {/* Main layout */}
-        <div className="grid gap-6 lg:grid-cols-[290px_1fr]">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
           {/* Sidebar — desktop */}
-          <ScrollReveal direction="left" delay={0.2} className="hidden lg:block">
+          <ScrollReveal direction="left" delay={0.2} className="hidden lg:block lg:w-[290px] lg:shrink-0">
             {Sidebar}
           </ScrollReveal>
 
           {/* Listings */}
-          <section>
+          <section className="flex-1 min-w-0">
             {filteredProjects.length > 0 ? (
               <div className="space-y-5">
                 {filteredProjects.map((p) => (
