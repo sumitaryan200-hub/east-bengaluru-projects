@@ -6,7 +6,6 @@ import AppFooter from '../components/AppFooter'
 import AppHeader from '../components/AppHeader'
 import FloatingWidgets from '../components/FloatingWidgets'
 import ScrollReveal from '../components/ScrollReveal'
-import StaggerReveal from '../components/StaggerReveal'
 import { listingFilters, projects } from '../data/marketplace'
 
 function FilterChip({ label, value, onClick, onClear }) {
@@ -184,7 +183,7 @@ function PropertyListCard({ project }) {
             </div>
             {/* Price section */}
             <div className="sm:text-right shrink-0">
-              <div className="text-[22px] font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(212,175,55,0.15)]">{project.priceLabel}</div>
+              <div className="text-[22px] font-black text-[#D4AF37] tracking-tight">{project.priceLabel}</div>
               <div className="text-[11px] font-bold text-slate-500 uppercase tracking-widest mt-0.5">onwards</div>
             </div>
           </div>
